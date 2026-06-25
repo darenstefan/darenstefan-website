@@ -1,0 +1,28 @@
+{
+  "stories": [
+    {
+      "name": "Aisha",
+      "distance": "Lagos -> Toronto · 5,600 miles",
+      "status": "Still going - we make it work",
+      "story": "We've been doing this for two years. The hardest part isn't the distance - it's watching him eat breakfast on FaceTime while I'm getting ready for bed. We exist in different days.",
+      "shoutout": true,
+      "created_at": "2026-06-23T00:00:00Z"
+    },
+    {
+      "name": "Anonymous",
+      "distance": "Manila -> Dubai · 4,100 miles",
+      "status": "It became a success story",
+      "story": "Three years of calls that dropped at the wrong moment. One flight that changed everything. Distance teaches you to say what you mean - you can't afford small talk when your time zones only overlap for two hours.",
+      "shoutout": false,
+      "created_at": "2026-06-23T00:00:00Z"
+    },
+    {
+      "name": "James",
+      "distance": "London -> Seoul · 5,500 miles",
+      "status": "We didn't make it",
+      "story": "I learned her language. Not Korean - her language. The way she went quiet when something was wrong. I learned it too late, through a screen, and by the time I understood it she'd already moved on.",
+      "shoutout": true,
+      "created_at": "2026-06-23T00:00:00Z"
+    }
+  ]
+}
