@@ -3,30 +3,159 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Press Kit - Daren Stefan</title>
-  <meta name="description" content="Official press kit for Daren Stefan, independent cinematic indie artist based in Dubai. Bios, links, streaming info, and booking contact for media and industry professionals." />
-  <meta property="og:title" content="Press Kit - Daren Stefan" />
-  <meta property="og:description" content="Official press kit for Daren Stefan, independent cinematic indie artist based in Dubai. Bios, links, streaming info, and booking contact for media and industry professionals." />
+  <title>Press Kit — Daren Stefan</title>
+  <meta name="description" content="Official press kit for Daren Stefan — independent cinematic indie artist based in Dubai. Bios, links, streaming info, and booking contact for media and industry professionals." />
+  <meta property="og:title" content="Daren Stefan — Press Kit" />
+  <meta property="og:description" content="Official press kit for Daren Stefan. Bios, streaming links, and contact for media, playlist curators, and booking." />
+  <meta property="og:image" content="https://darenstefan.com/assets/social-card.png" />
+  <meta property="og:url" content="https://darenstefan.com/press.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://darenstefan.com/press.html" />
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="canonical" href="https://darenstefan.com/press.html" />
-  <meta property="og:url" content="https://darenstefan.com/press.html" />
-  <meta property="og:image" content="https://darenstefan.com/assets/social-card.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Press Kit - Daren Stefan" />
-  <meta name="twitter:description" content="Official press kit for Daren Stefan, independent cinematic indie artist based in Dubai. Bios, links, streaming info, and booking contact for media and industry professionals." />
-  <meta name="twitter:image" content="https://darenstefan.com/assets/social-card.png" />
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="assets/style.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"MusicGroup","name":"Daren Stefan","alternateName":"Darenstefan","url":"https://darenstefan.com/","image":"https://darenstefan.com/assets/social-card.png","genre":["Cinematic Indie","AI-assisted music"],"sameAs":["https://open.spotify.com/album/4PxJ01q7ZyNlEis4kIHopG","https://music.apple.com/artist/1895715791","https://soundcloud.com/darenstefan","https://www.youtube.com/@darenstefan","https://www.instagram.com/darenstefanofficial","https://www.tiktok.com/@darenstefan1"],"workFeatured":{"@type":"MusicAlbum","name":"LAING - Act One","url":"https://open.spotify.com/album/4PxJ01q7ZyNlEis4kIHopG","byArtist":{"@type":"MusicGroup","name":"Daren Stefan"}}}</script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black:    #0a0a0c;
+      --surface:  #12121a;
+      --overlay:  #1c1c26;
+      --border:   rgba(200, 169, 126, 0.15);
+      --gold:     #c8a97e;
+      --gold-dim: rgba(200, 169, 126, 0.4);
+      --parchment:#f0e6d3;
+      --muted:    rgba(240, 230, 211, 0.45);
+      --dim:      rgba(240, 230, 211, 0.22);
+      --display:  'Cormorant Garamond', Georgia, serif;
+      --body:     'Inter', system-ui, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--parchment); font-family: var(--body); font-weight: 300; line-height: 1.7; overflow-x: hidden; }
 
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 20px 48px; background: linear-gradient(to bottom, rgba(10,10,12,0.95) 0%, transparent 100%); transition: background 0.4s; }
+    nav.scrolled { background: rgba(10,10,12,0.97); border-bottom: 1px solid var(--border); }
+    .nav-logo { font-family: var(--display); font-size: 1.1rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--parchment); text-decoration: none; }
+    .nav-links { display: flex; gap: 36px; list-style: none; }
+    .nav-links a { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-hamburger span { display: block; width: 24px; height: 1px; background: var(--parchment); transition: all 0.3s; }
 
+    /* HERO */
+    #press-hero { position: relative; min-height: 52vh; display: flex; align-items: flex-end; padding-bottom: 80px; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 30% 50%, rgba(44,32,48,0.55) 0%, transparent 70%), #0a0a0c; }
+    .hero-grain { position: absolute; inset: 0; opacity: 0.035; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size: 256px; }
+    .hero-content { position: relative; max-width: 1100px; margin: 0 auto; padding: 0 48px; }
+    .hero-eyebrow { font-size: 0.65rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; opacity: 0; animation: fadeUp 1s ease 0.3s forwards; }
+    .hero-title { font-family: var(--display); font-size: clamp(2.8rem, 7vw, 6rem); font-weight: 300; line-height: 1.0; color: var(--parchment); opacity: 0; animation: fadeUp 1s ease 0.6s forwards; }
+    .hero-subtitle { font-family: var(--display); font-style: italic; font-size: clamp(1rem, 2vw, 1.3rem); color: var(--muted); margin-top: 16px; opacity: 0; animation: fadeUp 1s ease 0.9s forwards; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 36px; opacity: 0; animation: fadeUp 1s ease 1.2s forwards; }
+    .btn-gold { display: inline-block; padding: 12px 28px; border: 1px solid var(--gold); color: var(--gold); font-family: var(--body); font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; cursor: pointer; background: none; transition: background 0.25s, color 0.25s; }
+    .btn-gold:hover { background: var(--gold); color: var(--black); }
+    .btn-ghost { display: inline-block; padding: 12px 28px; border: 1px solid var(--border); color: var(--muted); font-family: var(--body); font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; transition: border-color 0.25s, color 0.25s; }
+    .btn-ghost:hover { border-color: var(--gold-dim); color: var(--parchment); }
+
+    /* SHARED */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
+    section { padding: 80px 0; }
+    .section-label { font-size: 0.65rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+    .section-title { font-family: var(--display); font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 300; line-height: 1.1; color: var(--parchment); margin-bottom: 40px; }
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .divider { height: 1px; background: var(--border); margin: 0; }
+
+    /* QUICK FACTS */
+    #quick-facts { background: var(--surface); }
+    .facts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 2px; }
+    .fact-item { background: var(--overlay); padding: 28px 24px; border-left: 1px solid var(--border); transition: border-color 0.2s; }
+    .fact-item:hover { border-color: var(--gold-dim); }
+    .fact-key { font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--dim); margin-bottom: 8px; }
+    .fact-val { font-family: var(--display); font-size: 1.1rem; font-weight: 300; color: var(--parchment); line-height: 1.4; }
+
+    /* BIOS */
+    #bios { background: var(--black); }
+    .bio-tabs { display: flex; gap: 0; margin-bottom: 40px; border-bottom: 1px solid var(--border); }
+    .bio-tab { padding: 12px 24px; font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--dim); cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px; transition: color 0.2s, border-color 0.2s; background: none; border-top: none; border-left: none; border-right: none; font-family: var(--body); }
+    .bio-tab.active { color: var(--gold); border-bottom-color: var(--gold); }
+    .bio-panel { display: none; }
+    .bio-panel.active { display: block; }
+    .bio-text { font-family: var(--display); font-size: 1.05rem; font-weight: 300; color: var(--muted); line-height: 1.95; max-width: 740px; }
+    .bio-text p { margin-bottom: 20px; }
+    .bio-text p:last-child { margin-bottom: 0; }
+    .bio-text em { font-style: italic; color: var(--parchment); }
+    .copy-btn { display: inline-block; margin-top: 28px; padding: 10px 22px; border: 1px solid var(--border); color: var(--dim); font-family: var(--body); font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase; cursor: pointer; background: none; transition: border-color 0.2s, color 0.2s; }
+    .copy-btn:hover { border-color: var(--gold-dim); color: var(--gold); }
+
+    /* STREAMING LINKS */
+    #streaming { background: var(--surface); }
+    .streaming-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 2px; }
+    .stream-item { background: var(--overlay); padding: 24px 28px; border-left: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; gap: 16px; text-decoration: none; transition: border-color 0.2s, background 0.2s; }
+    .stream-item:hover { border-color: var(--gold-dim); background: rgba(200,169,126,0.04); }
+    .stream-name { font-family: var(--display); font-size: 1.05rem; color: var(--parchment); }
+    .stream-type { font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dim); margin-top: 2px; }
+    .stream-arrow { color: var(--gold-dim); font-size: 1rem; transition: color 0.2s; }
+    .stream-item:hover .stream-arrow { color: var(--gold); }
+
+    /* LATEST RELEASE */
+    #latest { background: var(--black); }
+    .latest-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+    .latest-info .release-tag { display: inline-block; padding: 4px 12px; border: 1px solid var(--gold-dim); font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .latest-info h3 { font-family: var(--display); font-size: 2rem; font-weight: 300; color: var(--parchment); margin-bottom: 8px; }
+    .latest-info .release-sub { font-family: var(--display); font-style: italic; color: var(--muted); margin-bottom: 24px; }
+    .latest-info p { font-size: 0.88rem; color: var(--muted); line-height: 1.85; margin-bottom: 16px; }
+    .release-links { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+    .latest-embed iframe { display: block; width: 100%; border: none; }
+
+    /* CONTACT */
+    #press-contact { background: var(--surface); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .contact-info h3 { font-family: var(--display); font-size: 1.6rem; font-weight: 300; color: var(--parchment); margin-bottom: 16px; }
+    .contact-info p { font-size: 0.88rem; color: var(--muted); line-height: 1.85; margin-bottom: 28px; }
+    .contact-links { display: flex; flex-direction: column; gap: 12px; }
+    .contact-links a { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); text-decoration: none; transition: opacity 0.2s; }
+    .contact-links a:hover { opacity: 0.7; }
+    .press-form { display: flex; flex-direction: column; gap: 14px; }
+    .form-field { display: flex; flex-direction: column; gap: 6px; }
+    .form-field label { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--dim); }
+    .form-field input, .form-field select, .form-field textarea { padding: 12px 16px; background: var(--overlay); border: 1px solid var(--border); color: var(--parchment); font-family: var(--body); font-size: 0.85rem; outline: none; resize: none; transition: border-color 0.2s; appearance: none; }
+    .form-field input:focus, .form-field select:focus, .form-field textarea:focus { border-color: var(--gold-dim); }
+    .form-field input::placeholder, .form-field textarea::placeholder { color: var(--dim); }
+    .form-field select option { background: var(--surface); }
+    .press-submit { padding: 14px 32px; background: none; border: 1px solid var(--gold); color: var(--gold); font-family: var(--body); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; cursor: pointer; align-self: flex-start; transition: background 0.25s, color 0.25s; }
+    .press-submit:hover { background: var(--gold); color: var(--black); }
+    .press-submit:disabled { opacity: 0.5; cursor: default; }
+
+    /* FOOTER */
+    footer { background: var(--black); border-top: 1px solid var(--border); padding: 48px 0; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; }
+    .footer-logo { font-family: var(--display); font-size: 1rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--parchment); text-decoration: none; }
+    .footer-socials { display: flex; gap: 24px; }
+    .footer-socials a { font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--dim); text-decoration: none; transition: color 0.2s; }
+    .footer-socials a:hover { color: var(--gold); }
+    .footer-copy { font-size: 0.65rem; letter-spacing: 0.1em; color: var(--dim); width: 100%; text-align: center; margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--border); }
+
+    @keyframes fadeUp { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:translateY(0); } }
+
+    @media (max-width: 768px) {
+      nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+      .nav-links.open { display: flex; flex-direction: column; position: fixed; inset: 0; background: rgba(10,10,12,0.98); align-items: center; justify-content: center; gap: 32px; z-index: 99; }
+      .nav-links.open a { font-size: 1.2rem; }
+      .nav-hamburger { display: flex; z-index: 101; position: relative; }
+      .container { padding: 0 24px; }
+      .hero-content { padding: 0 24px; }
+      .latest-grid, .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+      .facts-grid { grid-template-columns: 1fr 1fr; }
+      section { padding: 60px 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
 </head>
-<body class="press-page">
+<body>
 
   <!-- NAV -->
   <nav id="nav">
@@ -37,10 +166,11 @@
       <li><a href="index.html#music">Music</a></li>
       <li><a href="index.html#videos">Videos</a></li>
       <li><a href="index.html#about">About</a></li>
+      <li><a href="lyrics.html">Lyrics</a></li>
       <li><a href="press.html" class="active">Press</a></li>
       <li><a href="index.html#contact">Contact</a></li>
     </ul>
-    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" type="button">
+    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>
   </nav>
@@ -109,10 +239,10 @@
       <p class="section-label reveal">Artist Biography</p>
       <h2 class="section-title reveal">In His Own Words</h2>
 
-      <div class="bio-tabs reveal" role="tablist" aria-label="Biography length">
-        <button class="bio-tab active" type="button" data-bio-tab="short" aria-selected="true">Short Bio</button>
-        <button class="bio-tab" type="button" data-bio-tab="medium" aria-selected="false">Medium Bio</button>
-        <button class="bio-tab" type="button" data-bio-tab="long" aria-selected="false">Full Bio</button>
+      <div class="bio-tabs reveal">
+        <button class="bio-tab active" onclick="switchBio('short')">Short Bio</button>
+        <button class="bio-tab" onclick="switchBio('medium')">Medium Bio</button>
+        <button class="bio-tab" onclick="switchBio('long')">Full Bio</button>
       </div>
 
       <!-- SHORT BIO -->
@@ -120,7 +250,7 @@
         <div class="bio-text">
           <p>Daren Stefan is an independent cinematic indie artist based in Dubai. His music explores digital intimacy, long-distance connection, and the feelings people carry but can't quite name. His debut trilogy <em>LAING</em> is available on all major streaming platforms.</p>
         </div>
-        <button class="copy-btn" type="button" data-copy-bio="short">Copy Short Bio</button>
+        <button class="copy-btn" onclick="copyBio('short')">Copy Short Bio</button>
       </div>
 
       <!-- MEDIUM BIO -->
@@ -129,7 +259,7 @@
           <p>Daren Stefan is an independent musician and content creator based in Dubai, making cinematic indie music that puts words to feelings people can't explain. His work sits at the intersection of emotional introspection, digital connection, and AI-assisted production.</p>
           <p>His debut project <em>LAING</em> is a planned fifteen-song trilogy structured in three acts, exploring digital intimacy, long-distance love, and the emotional lives built through screens. Act One — five tracks including <em>Typing…</em>, <em>Your Morning Is My Insomnia</em>, and <em>Temporary Heaven</em> — is available on Spotify and all major platforms. Act Two, subtitled <em>Friction</em>, is currently in development.</p>
         </div>
-        <button class="copy-btn" type="button" data-copy-bio="medium">Copy Medium Bio</button>
+        <button class="copy-btn" onclick="copyBio('medium')">Copy Medium Bio</button>
       </div>
 
       <!-- LONG BIO -->
@@ -141,7 +271,7 @@
           <p>Alongside LAING, Daren has released the standalone singles <em>Everybody Remembers Me Differently</em> and <em>Me in the Glass</em>, as well as the EP <em>Hollow Hours</em> — all available on SoundCloud. He also runs a secondary lofi channel, Sehnsucht, as a fully separate creative identity.</p>
           <p>Writing with instinct, producing with AI, releasing with intention — Daren Stefan is building a body of work that treats music not as content, but as correspondence.</p>
         </div>
-        <button class="copy-btn" type="button" data-copy-bio="long">Copy Full Bio</button>
+        <button class="copy-btn" onclick="copyBio('long')">Copy Full Bio</button>
       </div>
     </div>
   </section>
@@ -161,7 +291,6 @@
           <p>Available on Spotify, Apple Music, and all major streaming platforms via DistroKid.</p>
           <div class="release-links">
             <a href="https://open.spotify.com/track/0844qgF9TOwa9YslbqnRyr" target="_blank" rel="noopener" class="btn-gold">Stream on Spotify</a>
-            <a href="https://music.apple.com/album/6782507872" target="_blank" rel="noopener" class="btn-ghost">Apple Music</a>
             <a href="laing.html" class="btn-ghost">View LAING Trilogy →</a>
           </div>
         </div>
@@ -185,7 +314,7 @@
           <div><p class="stream-name">Spotify</p><p class="stream-type">LAING Act One · All Singles</p></div>
           <span class="stream-arrow">→</span>
         </a>
-        <a href="https://music.apple.com/artist/1895715791" target="_blank" rel="noopener" class="stream-item">
+        <a href="https://music.apple.com" target="_blank" rel="noopener" class="stream-item">
           <div><p class="stream-name">Apple Music</p><p class="stream-type">All Releases</p></div>
           <span class="stream-arrow">→</span>
         </a>
@@ -264,7 +393,7 @@
             <label for="p-message">Message</label>
             <textarea id="p-message" rows="5" placeholder="Tell us what you're working on and how we can help..."></textarea>
           </div>
-          <button class="press-submit" id="press-btn" data-press-submit>Send Enquiry</button>
+          <button class="press-submit" id="press-btn" onclick="handlePressSubmit()">Send Enquiry</button>
         </div>
       </div>
     </div>
@@ -277,7 +406,7 @@
         <a href="index.html" class="footer-logo">Darenstefan</a>
         <div class="footer-socials">
           <a href="https://open.spotify.com/album/4PxJ01q7ZyNlEis4kIHopG" target="_blank" rel="noopener">Spotify</a>
-          <a href="https://music.apple.com/artist/1895715791" target="_blank" rel="noopener">Apple Music</a>
+          <a href="https://music.apple.com" target="_blank" rel="noopener">Apple Music</a>
           <a href="https://www.youtube.com/@darenstefan" target="_blank" rel="noopener">YouTube</a>
           <a href="https://www.instagram.com/darenstefanofficial" target="_blank" rel="noopener">Instagram</a>
           <a href="https://www.tiktok.com/@darenstefan1" target="_blank" rel="noopener">TikTok</a>
@@ -286,6 +415,74 @@
       <p class="footer-copy">© 2026 Daren Stefan. All rights reserved. Music distributed via DistroKid.</p>
     </div>
   </footer>
-  <script src="assets/script.js" defer></script>
+
+  <script>
+    // Nav scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); });
+
+    // Hamburger
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a => { a.addEventListener('click', () => navLinks.classList.remove('open')); });
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Bio tabs
+    function switchBio(type) {
+      document.querySelectorAll('.bio-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.bio-panel').forEach(p => p.classList.remove('active'));
+      document.querySelector(`[onclick="switchBio('${type}')"]`).classList.add('active');
+      document.getElementById('bio-' + type).classList.add('active');
+    }
+
+    // Copy bio to clipboard
+    const bioTexts = {
+      short: "Daren Stefan is an independent cinematic indie artist based in Dubai. His music explores digital intimacy, long-distance connection, and the feelings people carry but can't quite name. His debut trilogy LAING is available on all major streaming platforms.",
+      medium: "Daren Stefan is an independent musician and content creator based in Dubai, making cinematic indie music that puts words to feelings people can't explain. His work sits at the intersection of emotional introspection, digital connection, and AI-assisted production.\n\nHis debut project LAING is a planned fifteen-song trilogy structured in three acts, exploring digital intimacy, long-distance love, and the emotional lives built through screens. Act One — five tracks including Typing…, Your Morning Is My Insomnia, and Temporary Heaven — is available on Spotify and all major platforms. Act Two, subtitled Friction, is currently in development.",
+      long: "Daren Stefan is an independent musician, content creator, and digital storyteller based in Dubai. His music is cinematic and introspective — built for the 3am moments, the timezone gaps, the version of yourself that only exists in the reflection of a screen.\n\nHis debut project LAING is a fifteen-song cinematic indie trilogy structured in three acts. The project explores digital intimacy, long-distance love, and what it means to communicate across screens and time zones. Act One — Digital Intimacy — spans five tracks: Typing…, Your Morning Is My Insomnia, Stay Strange, Love in Translation, and Temporary Heaven. It is available on Spotify, Apple Music, and all major platforms via DistroKid.\n\nAct Two, subtitled Friction, is currently in development. Its five confirmed track titles — The Girl Before Me, Call Failed, Somebody Else Taught You Fear, I Learned Your Language Wrong, and Still Here (Barely) — signal a darker, more difficult emotional chapter. Act Three remains unrevealed.\n\nAlongside LAING, Daren has released the standalone singles Everybody Remembers Me Differently and Me in the Glass, as well as the EP Hollow Hours. Writing with instinct, producing with AI, releasing with intention — Daren Stefan is building a body of work that treats music not as content, but as correspondence."
+    };
+
+    function copyBio(type) {
+      navigator.clipboard.writeText(bioTexts[type]).then(() => {
+        const btn = document.querySelector(`#bio-${type} .copy-btn`);
+        const orig = btn.textContent;
+        btn.textContent = 'Copied ✓';
+        btn.style.borderColor = 'var(--gold-dim)';
+        btn.style.color = 'var(--gold)';
+        setTimeout(() => { btn.textContent = orig; btn.style.borderColor = ''; btn.style.color = ''; }, 2000);
+      });
+    }
+
+    // Press contact form
+    async function handlePressSubmit() {
+      const name    = document.getElementById('p-name').value.trim();
+      const email   = document.getElementById('p-email').value.trim();
+      const type    = document.getElementById('p-type').value;
+      const outlet  = document.getElementById('p-outlet').value.trim();
+      const message = document.getElementById('p-message').value.trim();
+      const btn     = document.getElementById('press-btn');
+      if (!name || !email || !message) { btn.textContent = 'Please fill in required fields.'; setTimeout(() => btn.textContent = 'Send Enquiry', 2000); return; }
+      btn.textContent = 'Sending…'; btn.disabled = true;
+      try {
+        const res = await fetch('https://formspree.io/f/xpqgagly', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({ _subject: 'Press Enquiry — ' + (type || 'General') + ' — ' + name, name, email, enquiry_type: type || 'Not specified', outlet: outlet || 'Not provided', message })
+        });
+        if (res.ok) {
+          btn.textContent = 'Sent — we\'ll be in touch.';
+          btn.style.borderColor = 'var(--gold-dim)';
+          ['p-name','p-email','p-type','p-outlet','p-message'].forEach(id => document.getElementById(id).value = '');
+        } else { btn.textContent = 'Something went wrong — try again.'; btn.disabled = false; }
+      } catch { btn.textContent = 'Network error — try again.'; btn.disabled = false; }
+    }
+  </script>
 </body>
 </html>
