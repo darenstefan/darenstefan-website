@@ -3,30 +3,178 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LAING - The Trilogy | Daren Stefan</title>
+  <title>LAING — The Trilogy | Daren Stefan</title>
   <meta name="description" content="LAING is a 15-song cinematic indie trilogy about digital intimacy, long-distance love, and the feelings that live between screens. Three acts. One conversation that never really ended." />
-  <meta property="og:title" content="LAING - The Trilogy | Daren Stefan" />
-  <meta property="og:description" content="LAING is a 15-song cinematic indie trilogy about digital intimacy, long-distance love, and the feelings that live between screens. Three acts. One conversation that never really ended." />
+  <meta property="og:title" content="LAING — Three Acts. Fifteen Songs. One Conversation." />
+  <meta property="og:description" content="A cinematic trilogy about the distance between two people and everything that fills it." />
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="canonical" href="https://darenstefan.com/laing.html" />
-  <meta property="og:url" content="https://darenstefan.com/laing.html" />
-  <meta property="og:image" content="https://darenstefan.com/assets/social-card.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="LAING - The Trilogy | Daren Stefan" />
-  <meta name="twitter:description" content="LAING is a 15-song cinematic indie trilogy about digital intimacy, long-distance love, and the feelings that live between screens. Three acts. One conversation that never really ended." />
-  <meta name="twitter:image" content="https://darenstefan.com/assets/social-card.png" />
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="assets/style.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"MusicGroup","name":"Daren Stefan","alternateName":"Darenstefan","url":"https://darenstefan.com/","image":"https://darenstefan.com/assets/social-card.png","genre":["Cinematic Indie","AI-assisted music"],"sameAs":["https://open.spotify.com/album/4PxJ01q7ZyNlEis4kIHopG","https://music.apple.com/artist/1895715791","https://soundcloud.com/darenstefan","https://www.youtube.com/@darenstefan","https://www.instagram.com/darenstefanofficial","https://www.tiktok.com/@darenstefan1"],"workFeatured":{"@type":"MusicAlbum","name":"LAING - Act One","url":"https://open.spotify.com/album/4PxJ01q7ZyNlEis4kIHopG","byArtist":{"@type":"MusicGroup","name":"Daren Stefan"}}}</script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black:    #0a0a0c;
+      --surface:  #12121a;
+      --overlay:  #1c1c26;
+      --border:   rgba(200, 169, 126, 0.15);
+      --gold:     #c8a97e;
+      --gold-dim: rgba(200, 169, 126, 0.4);
+      --parchment:#f0e6d3;
+      --muted:    rgba(240, 230, 211, 0.45);
+      --dim:      rgba(240, 230, 211, 0.22);
+      --friction: #8a6a8a;
+      --friction-dim: rgba(138, 106, 138, 0.3);
+      --display:  'Cormorant Garamond', Georgia, serif;
+      --body:     'Inter', system-ui, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--parchment); font-family: var(--body); font-weight: 300; line-height: 1.7; overflow-x: hidden; }
 
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 20px 48px; background: linear-gradient(to bottom, rgba(10,10,12,0.95) 0%, transparent 100%); transition: background 0.4s; }
+    nav.scrolled { background: rgba(10,10,12,0.97); border-bottom: 1px solid var(--border); }
+    .nav-logo { font-family: var(--display); font-size: 1.1rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--parchment); text-decoration: none; }
+    .nav-links { display: flex; gap: 36px; list-style: none; }
+    .nav-links a { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-hamburger span { display: block; width: 24px; height: 1px; background: var(--parchment); transition: all 0.3s; }
 
+    #laing-hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 70% 60% at 50% 40%, rgba(44,20,55,0.7) 0%, transparent 70%), radial-gradient(ellipse 40% 30% at 80% 70%, rgba(200,169,126,0.05) 0%, transparent 60%), #0a0a0c; }
+    .hero-grain { position: absolute; inset: 0; opacity: 0.04; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size: 256px 256px; }
+    .cursor-blink { display: inline-block; width: 3px; height: 0.85em; background: var(--gold); margin-left: 4px; vertical-align: middle; animation: blink 1.1s step-end infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+    .hero-content { position: relative; text-align: center; padding: 0 24px; }
+    .hero-timestamp { font-family: var(--body); font-size: 0.68rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); opacity: 0; animation: fadeUp 1s ease 0.3s forwards; }
+    .hero-title { font-family: var(--display); font-size: clamp(5rem, 18vw, 13rem); font-weight: 300; font-style: italic; line-height: 0.9; letter-spacing: 0.02em; color: var(--parchment); margin: 16px 0 0; opacity: 0; animation: fadeUp 1.2s cubic-bezier(0.16,1,0.3,1) 0.6s forwards; }
+    .hero-tagline { font-family: var(--display); font-size: clamp(0.9rem, 2vw, 1.2rem); font-weight: 300; color: var(--muted); margin-top: 28px; line-height: 1.7; opacity: 0; animation: fadeUp 1s ease 1.2s forwards; }
+    .hero-meta { display: flex; gap: 40px; justify-content: center; margin-top: 48px; opacity: 0; animation: fadeUp 1s ease 1.6s forwards; }
+    .hero-meta-item { text-align: center; }
+    .hero-meta-num { font-family: var(--display); font-size: 2rem; font-weight: 300; color: var(--gold); line-height: 1; }
+    .hero-meta-label { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--dim); margin-top: 4px; }
+    .hero-scroll { position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; opacity: 0; animation: fadeUp 1s ease 2s forwards; }
+    .hero-scroll span { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--dim); }
+    .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--gold-dim), transparent); animation: scrollPulse 2s ease-in-out infinite; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
+    .section-label { font-size: 0.65rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .section-title { font-family: var(--display); font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 300; line-height: 1.1; color: var(--parchment); margin-bottom: 48px; }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    #act-one { background: var(--surface); padding: 100px 0; }
+    .act-header { display: flex; align-items: baseline; gap: 24px; margin-bottom: 48px; }
+    .act-number { font-family: var(--display); font-size: clamp(4rem, 8vw, 7rem); font-weight: 300; font-style: italic; color: var(--gold); opacity: 0.25; line-height: 1; }
+    .act-title-block { flex: 1; }
+    .act-status { display: inline-block; padding: 4px 12px; border: 1px solid var(--gold-dim); font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+    .act-status.coming { border-color: var(--friction-dim); color: var(--friction); }
+    .act-status.soon { border-color: var(--border); color: var(--dim); }
+    .act-name { font-family: var(--display); font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 300; color: var(--parchment); }
+    .act-subtitle { font-family: var(--display); font-style: italic; font-size: 1rem; color: var(--muted); margin-top: 4px; }
+    .act-description { font-size: 0.95rem; color: var(--muted); line-height: 1.9; max-width: 620px; margin-bottom: 48px; border-left: 1px solid var(--gold-dim); padding-left: 24px; }
+    .tracks-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2px; margin-bottom: 40px; }
+    .track-embed { background: var(--overlay); padding: 20px; border-left: 1px solid var(--border); transition: border-color 0.2s; }
+    .track-embed:hover { border-color: var(--gold-dim); }
+    .track-embed iframe { display: block; width: 100%; border: none; }
+    .track-label { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--dim); margin-bottom: 10px; }
+    .album-link { display: inline-block; font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--gold-dim); padding-bottom: 2px; transition: color 0.2s, border-color 0.2s; }
+    .album-link:hover { color: var(--parchment); border-color: var(--parchment); }
+
+    #act-two { background: var(--black); padding: 100px 0; border-top: 1px solid var(--border); }
+    .act-two-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .tracklist { display: flex; flex-direction: column; gap: 0; }
+    .tracklist-item { display: flex; align-items: baseline; gap: 20px; padding: 20px 0; border-bottom: 1px solid var(--border); transition: border-color 0.25s; cursor: default; }
+    .tracklist-item:first-child { border-top: 1px solid var(--border); }
+    .tracklist-item:hover { border-bottom-color: var(--friction-dim); }
+    .tracklist-item:hover .track-title-text { color: var(--parchment); }
+    .track-num { font-family: var(--display); font-size: 0.85rem; color: var(--friction); opacity: 0.6; width: 28px; flex-shrink: 0; }
+    .track-title-text { font-family: var(--display); font-size: 1.15rem; font-weight: 300; color: var(--muted); transition: color 0.2s; flex: 1; }
+    .track-lock { font-size: 0.6rem; letter-spacing: 0.14em; color: var(--dim); text-transform: uppercase; flex-shrink: 0; }
+    .act-two-story { padding-top: 8px; }
+    .act-two-story p { font-size: 0.95rem; color: var(--muted); line-height: 1.95; margin-bottom: 20px; }
+    .act-two-story p em { font-family: var(--display); font-style: italic; font-size: 1.05rem; color: var(--parchment); }
+    .notify-pill { display: inline-block; margin-top: 8px; padding: 10px 22px; border: 1px solid var(--friction-dim); color: var(--friction); font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none; transition: background 0.25s, color 0.25s; cursor: pointer; background: none; font-family: var(--body); }
+    .notify-pill:hover { background: var(--friction-dim); color: var(--parchment); }
+
+    #act-three { background: var(--surface); padding: 80px 0; border-top: 1px solid var(--border); }
+    .act-three-inner { display: flex; align-items: center; justify-content: space-between; gap: 60px; flex-wrap: wrap; }
+    .act-three-text .act-name { color: var(--dim); }
+    .redacted { display: inline-block; background: var(--dim); color: transparent; border-radius: 2px; user-select: none; margin: 0 2px; padding: 0 4px; }
+    .act-three-quote { font-family: var(--display); font-style: italic; font-size: 1.4rem; font-weight: 300; color: var(--dim); max-width: 400px; line-height: 1.65; border-left: 1px solid var(--border); padding-left: 24px; }
+
+    #distance-wall { background: var(--black); padding: 100px 0; border-top: 1px solid var(--border); }
+    .wall-intro { max-width: 640px; margin-bottom: 64px; }
+    .wall-intro p { font-family: var(--display); font-style: italic; font-size: 1.15rem; color: var(--muted); line-height: 1.85; margin-bottom: 16px; }
+    .wall-intro p strong { font-style: normal; font-weight: 400; color: var(--parchment); }
+    .story-form-wrap { background: var(--overlay); border: 1px solid var(--border); border-left: 3px solid var(--gold-dim); padding: 40px; margin-bottom: 64px; }
+    .story-form-title { font-family: var(--display); font-size: 1.5rem; font-weight: 300; color: var(--parchment); margin-bottom: 8px; }
+    .story-form-sub { font-size: 0.8rem; color: var(--muted); margin-bottom: 32px; line-height: 1.7; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+    .form-field { display: flex; flex-direction: column; gap: 6px; }
+    .form-field label { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--dim); }
+    .form-field input, .form-field textarea, .form-field select { padding: 12px 16px; background: rgba(10,10,12,0.7); border: 1px solid var(--border); color: var(--parchment); font-family: var(--body); font-size: 0.85rem; outline: none; resize: none; transition: border-color 0.2s; appearance: none; }
+    .form-field input:focus, .form-field textarea:focus, .form-field select:focus { border-color: var(--gold-dim); }
+    .form-field input::placeholder, .form-field textarea::placeholder { color: var(--dim); }
+    .form-field select option { background: var(--surface); }
+    .story-textarea { width: 100%; margin-bottom: 16px; }
+    .story-textarea textarea { width: 100%; padding: 16px; background: rgba(10,10,12,0.7); border: 1px solid var(--border); color: var(--parchment); font-family: var(--display); font-size: 1rem; font-weight: 300; line-height: 1.8; resize: vertical; outline: none; transition: border-color 0.2s; }
+    .story-textarea textarea:focus { border-color: var(--gold-dim); }
+    .story-textarea textarea::placeholder { color: var(--dim); font-style: italic; }
+    .shoutout-row { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 24px; padding: 16px; border: 1px solid var(--border); background: rgba(200,169,126,0.03); }
+    .shoutout-row input[type="checkbox"] { margin-top: 3px; accent-color: var(--gold); width: 14px; height: 14px; flex-shrink: 0; cursor: pointer; }
+    .shoutout-row label { font-size: 0.8rem; color: var(--muted); line-height: 1.6; cursor: pointer; }
+    .shoutout-row label strong { color: var(--gold); font-weight: 400; }
+    .form-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .form-note { font-size: 0.68rem; color: var(--dim); line-height: 1.6; max-width: 380px; }
+    .story-submit { padding: 14px 32px; background: none; border: 1px solid var(--gold); color: var(--gold); font-family: var(--body); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; cursor: pointer; transition: background 0.25s, color 0.25s; white-space: nowrap; }
+    .story-submit:hover { background: var(--gold); color: var(--black); }
+    .story-submit:disabled { opacity: 0.5; cursor: default; }
+    .wall-divider { display: flex; align-items: center; gap: 20px; margin-bottom: 48px; }
+    .wall-divider-line { flex: 1; height: 1px; background: var(--border); }
+    .wall-divider-text { font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--dim); white-space: nowrap; }
+    .stories-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2px; margin-bottom: 16px; }
+    .story-card { background: var(--overlay); padding: 28px; border-left: 1px solid var(--border); transition: border-color 0.25s; }
+    .story-card:hover { border-color: var(--gold-dim); }
+    .story-card-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 14px; flex-wrap: wrap; gap: 8px; }
+    .story-card-name { font-family: var(--display); font-size: 0.95rem; color: var(--gold); font-weight: 400; }
+    .story-card-distance { font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dim); }
+    .story-card-text { font-family: var(--display); font-style: italic; font-size: 0.95rem; color: var(--muted); line-height: 1.75; }
+    .story-card-tag { margin-top: 14px; font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--friction); opacity: 0.7; }
+    .wall-empty { text-align: center; padding: 60px 20px; font-family: var(--display); font-style: italic; font-size: 1.1rem; color: var(--dim); }
+    .wall-count { font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--dim); text-align: center; margin-top: 24px; }
+
+    footer { background: var(--black); border-top: 1px solid var(--border); padding: 48px 0; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; }
+    .footer-logo { font-family: var(--display); font-size: 1rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--parchment); text-decoration: none; }
+    .footer-socials { display: flex; gap: 24px; }
+    .footer-socials a { font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--dim); text-decoration: none; transition: color 0.2s; }
+    .footer-socials a:hover { color: var(--gold); }
+    .footer-copy { font-size: 0.65rem; letter-spacing: 0.1em; color: var(--dim); width: 100%; text-align: center; margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--border); }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes scrollPulse { 0%,100% { opacity:0.3; } 50% { opacity:0.8; } }
+
+    @media (max-width: 768px) {
+      nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+      .nav-links.open { display: flex; flex-direction: column; position: fixed; inset: 0; background: rgba(10,10,12,0.98); align-items: center; justify-content: center; gap: 32px; z-index: 99; }
+      .nav-links.open a { font-size: 1.2rem; }
+      .nav-hamburger { display: flex; z-index: 101; position: relative; }
+      .container { padding: 0 24px; }
+      .act-two-grid { grid-template-columns: 1fr; gap: 48px; }
+      .form-row { grid-template-columns: 1fr; }
+      .form-bottom { flex-direction: column; align-items: flex-start; }
+      .act-three-inner { flex-direction: column; }
+      .stories-grid { grid-template-columns: 1fr; }
+      .hero-meta { gap: 24px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
 </head>
-<body class="laing-page">
+<body>
 
   <nav id="nav">
     <a href="index.html" class="nav-logo">Darenstefan</a>
@@ -36,11 +184,11 @@
       <li><a href="index.html#music">Music</a></li>
       <li><a href="index.html#videos">Videos</a></li>
       <li><a href="index.html#about">About</a></li>
-      <li><a href="press.html">Press</a></li>
       <li><a href="lyrics.html">Lyrics</a></li>
+      <li><a href="press.html">Press</a></li>
       <li><a href="index.html#contact">Contact</a></li>
     </ul>
-    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" type="button">
+    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>
   </nav>
@@ -87,27 +235,22 @@
       <div class="tracks-grid reveal">
         <div class="track-embed">
           <p class="track-label">Track 01 — Typing…</p>
-          <p class="track-links"><a href="https://music.apple.com/album/6774730663?i=6774730664" target="_blank" rel="noopener">Apple Music</a></p>
           <iframe src="https://open.spotify.com/embed/track/7yT6qd7kfYT2R32sJIlbh1?utm_source=generator&theme=0" height="80" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
         <div class="track-embed">
           <p class="track-label">Track 02 — Your Morning Is My Insomnia</p>
-          <p class="track-links"><a href="https://music.apple.com/album/6774730663?i=6774730666" target="_blank" rel="noopener">Apple Music</a></p>
           <iframe src="https://open.spotify.com/embed/track/18HC2NTs2o9lZFEWGw9RIM?utm_source=generator&theme=0" height="80" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
         <div class="track-embed">
           <p class="track-label">Track 03 — Stay Strange</p>
-          <p class="track-links"><a href="https://music.apple.com/album/6774730663?i=6774730667" target="_blank" rel="noopener">Apple Music</a></p>
           <iframe src="https://open.spotify.com/embed/track/46jn8Izluqxx7nDiaTKRL0?utm_source=generator&theme=0" height="80" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
         <div class="track-embed">
           <p class="track-label">Track 04 — Love in Translation</p>
-          <p class="track-links"><a href="https://music.apple.com/album/6774730663?i=6774730668" target="_blank" rel="noopener">Apple Music</a></p>
           <iframe src="https://open.spotify.com/embed/track/2Q0YTlr0u6wGQLkHJXrxRu?utm_source=generator&theme=0" height="80" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
         <div class="track-embed">
           <p class="track-label">Track 05 — Temporary Heaven</p>
-          <p class="track-links"><a href="https://music.apple.com/album/6774730663?i=6774730669" target="_blank" rel="noopener">Apple Music</a></p>
           <iframe src="https://open.spotify.com/embed/track/5cbhnIMgZOKJYITarhdDC8?utm_source=generator&theme=0" height="80" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
         <div class="track-embed">
@@ -164,7 +307,7 @@
           <p><em>"Somebody Else Taught You Fear"</em> might be the most important song in the trilogy. It's about loving someone whose damage predates you — the impossible task of trying to undo what someone else did.</p>
           <p><em>"I Learned Your Language Wrong"</em> is about the moment you realize you've been speaking the same words but meaning different things. Act Two doesn't have an easy ending.</p>
           <p>Want to know when Act Two drops? Leave your story below — or just your email.</p>
-          <button class="notify-pill" data-scroll-target="distance-wall">Leave your story →</button>
+          <button class="notify-pill" onclick="document.getElementById('distance-wall').scrollIntoView({behavior:'smooth'})">Leave your story →</button>
         </div>
       </div>
     </div>
@@ -240,7 +383,7 @@
         </div>
         <div class="form-bottom">
           <p class="form-note">Stories are displayed publicly below. Your email is never shown publicly and is only used to contact you about a potential shoutout.</p>
-          <button class="story-submit" id="story-btn" data-story-submit>Share your distance →</button>
+          <button class="story-submit" id="story-btn" onclick="handleStorySubmit()">Share your distance →</button>
         </div>
       </div>
 
@@ -261,7 +404,7 @@
         <a href="index.html" class="footer-logo">Darenstefan</a>
         <div class="footer-socials">
           <a href="https://open.spotify.com/album/4PxJ01q7ZyNlEis4kIHopG" target="_blank" rel="noopener">Spotify</a>
-          <a href="https://music.apple.com/artist/1895715791" target="_blank" rel="noopener">Apple Music</a>
+          <a href="https://music.apple.com" target="_blank" rel="noopener">Apple Music</a>
           <a href="https://www.youtube.com/@darenstefan" target="_blank" rel="noopener">YouTube</a>
           <a href="https://www.instagram.com/darenstefanofficial" target="_blank" rel="noopener">Instagram</a>
           <a href="https://www.tiktok.com/@darenstefan1" target="_blank" rel="noopener">TikTok</a>
@@ -270,13 +413,89 @@
       <p class="footer-copy">© 2026 Daren Stefan. All rights reserved. Music distributed via DistroKid.</p>
     </div>
   </footer>
+
   <script>
     window.DARENSTEFAN_CONFIG = {
       distanceWallEndpoint: '/.netlify/functions/distance-wall',
       formspreeEndpoint: 'https://formspree.io/f/xpqgagly'
     };
   </script>
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); });
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a => { a.addEventListener('click', () => navLinks.classList.remove('open')); });
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
 
-  <script src="assets/script.js" defer></script>
+    const SEED_STORIES = [
+      { name: "Aisha", distance: "Lagos → Toronto · 5,600 miles", status: "Still going — we make it work", story: "We've been doing this for two years. The hardest part isn't the distance — it's watching him eat breakfast on FaceTime while I'm getting ready for bed. We exist in different days.", shoutout: true },
+      { name: "Anonymous", distance: "Manila → Dubai · 4,100 miles", status: "It became a success story", story: "Three years of calls that dropped at the wrong moment. One flight that changed everything. Distance teaches you to say what you mean — you can't afford small talk when your time zones only overlap for two hours.", shoutout: false },
+      { name: "James", distance: "London → Seoul · 5,500 miles", status: "We didn't make it", story: "I learned her language. Not Korean — her language. The way she went quiet when something was wrong. I learned it too late, through a screen, and by the time I understood it she'd already moved on.", shoutout: true }
+    ];
+
+    let allStories = [...SEED_STORIES];
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
+    function renderWall() {
+      const grid  = document.getElementById('stories-grid');
+      const empty = document.getElementById('wall-empty');
+      const count = document.getElementById('wall-count');
+      if (allStories.length === 0) { grid.innerHTML = ''; empty.style.display = 'block'; count.textContent = ''; return; }
+      empty.style.display = 'none';
+      count.textContent = allStories.length + ' ' + (allStories.length === 1 ? 'story' : 'stories') + ' shared';
+      grid.innerHTML = allStories.map(s => `
+        <div class="story-card">
+          <div class="story-card-header">
+            <span class="story-card-name">${escapeHtml(s.name || 'Anonymous')}</span>
+            <span class="story-card-distance">${escapeHtml(s.distance || '')}</span>
+          </div>
+          <p class="story-card-text">"${escapeHtml(s.story)}"</p>
+          ${s.shoutout ? '<p class="story-card-tag">✦ Wants a mention in Act II or III</p>' : ''}
+        </div>
+      `).join('');
+    }
+
+    async function handleStorySubmit() {
+      const name     = document.getElementById('s-name').value.trim();
+      const distance = document.getElementById('s-distance').value.trim();
+      const status   = document.getElementById('s-status').value;
+      const email    = document.getElementById('s-email').value.trim();
+      const story    = document.getElementById('s-story').value.trim();
+      const shoutout = document.getElementById('s-shoutout').checked;
+      const btn      = document.getElementById('story-btn');
+      if (!story) { btn.textContent = 'Please write your story first.'; setTimeout(() => btn.textContent = 'Share your distance →', 2000); return; }
+      btn.textContent = 'Sending…'; btn.disabled = true;
+      try {
+        await fetch('https://formspree.io/f/xpqgagly', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({ _subject: 'LAING Distance Wall — ' + (name || 'Anonymous'), name: name || 'Anonymous', distance, status, email: email || 'Not provided', story, shoutout: shoutout ? 'Yes — wants a mention' : 'No' })
+        });
+      } catch(e) { console.warn('Formspree send failed:', e); }
+      allStories.unshift({ name: name || 'Anonymous', distance, status, story, shoutout });
+      renderWall();
+      document.getElementById('s-name').value = '';
+      document.getElementById('s-distance').value = '';
+      document.getElementById('s-status').value = '';
+      document.getElementById('s-email').value = '';
+      document.getElementById('s-story').value = '';
+      document.getElementById('s-shoutout').checked = false;
+      btn.textContent = 'Story shared. Thank you. ✦';
+      btn.style.borderColor = 'var(--gold-dim)';
+      setTimeout(() => { btn.textContent = 'Share your distance →'; btn.style.borderColor = 'var(--gold)'; btn.disabled = false; }, 3000);
+    }
+
+    renderWall();
+  </script>
 </body>
 </html>
