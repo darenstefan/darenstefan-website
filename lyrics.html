@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lyrics — Daren Stefan</title>
+  <meta name="description" content="Official lyrics for Daren Stefan — Typing…, Your Morning Is My Insomnia, Stay Strange, Love in Translation, Temporary Heaven, Wildflower (His Reply), Me in the Glass, Everybody Remembers Me Differently." />
+  <meta property="og:title" content="Daren Stefan — Lyrics" />
+  <meta property="og:description" content="Official lyrics for the LAING trilogy and all Daren Stefan releases." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black:    #0a0a0c;
+      --surface:  #12121a;
+      --overlay:  #1c1c26;
+      --border:   rgba(200, 169, 126, 0.15);
+      --gold:     #c8a97e;
+      --gold-dim: rgba(200, 169, 126, 0.4);
+      --parchment:#f0e6d3;
+      --muted:    rgba(240, 230, 211, 0.45);
+      --dim:      rgba(240, 230, 211, 0.22);
+      --display:  'Cormorant Garamond', Georgia, serif;
+      --body:     'Inter', system-ui, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--parchment); font-family: var(--body); font-weight: 300; line-height: 1.7; overflow-x: hidden; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 20px 48px; background: linear-gradient(to bottom, rgba(10,10,12,0.95) 0%, transparent 100%); transition: background 0.4s; }
+    nav.scrolled { background: rgba(10,10,12,0.97); border-bottom: 1px solid var(--border); }
+    .nav-logo { font-family: var(--display); font-size: 1.1rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--parchment); text-decoration: none; }
+    .nav-links { display: flex; gap: 36px; list-style: none; }
+    .nav-links a { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-hamburger span { display: block; width: 24px; height: 1px; background: var(--parchment); }
+
+    /* HERO */
+    #lyrics-hero { position: relative; min-height: 46vh; display: flex; align-items: flex-end; padding-bottom: 72px; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 70% 60% at 20% 50%, rgba(44,32,48,0.5) 0%, transparent 70%), #0a0a0c; }
+    .hero-grain { position: absolute; inset: 0; opacity: 0.035; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size: 256px; }
+    .hero-content { position: relative; max-width: 1100px; margin: 0 auto; padding: 0 48px; }
+    .hero-eyebrow { font-size: 0.65rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; opacity: 0; animation: fadeUp 1s ease 0.3s forwards; }
+    .hero-title { font-family: var(--display); font-size: clamp(2.8rem, 7vw, 6rem); font-weight: 300; line-height: 1.0; color: var(--parchment); opacity: 0; animation: fadeUp 1s ease 0.6s forwards; }
+    .hero-sub { font-family: var(--display); font-style: italic; font-size: 1.1rem; color: var(--muted); margin-top: 14px; opacity: 0; animation: fadeUp 1s ease 0.9s forwards; }
+
+    /* LAYOUT */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* SONG INDEX */
+    #song-index { background: var(--surface); padding: 80px 0; }
+    .index-label { font-size: 0.65rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 40px; }
+    .index-group { margin-bottom: 48px; }
+    .index-group-title { font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--dim); margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+    .index-list { display: flex; flex-direction: column; gap: 2px; }
+    .index-item { display: flex; align-items: center; gap: 20px; padding: 16px 20px; background: var(--overlay); border-left: 1px solid var(--border); text-decoration: none; transition: border-color 0.2s, background 0.2s; cursor: pointer; }
+    .index-item:hover { border-color: var(--gold-dim); background: rgba(200,169,126,0.03); }
+    .index-num { font-family: var(--display); font-size: 0.85rem; color: var(--dim); width: 28px; flex-shrink: 0; }
+    .index-name { font-family: var(--display); font-size: 1.1rem; font-weight: 300; color: var(--parchment); flex: 1; }
+    .index-tag { font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dim); flex-shrink: 0; }
+    .index-arrow { color: var(--gold-dim); transition: color 0.2s; font-size: 0.9rem; }
+    .index-item:hover .index-arrow { color: var(--gold); }
+
+    /* LYRICS SECTIONS */
+    .lyrics-section { padding: 80px 0; border-top: 1px solid var(--border); }
+    .lyrics-section:nth-child(even) { background: var(--surface); }
+    .lyrics-section:nth-child(odd) { background: var(--black); }
+    .lyrics-header { display: flex; align-items: baseline; gap: 24px; margin-bottom: 48px; flex-wrap: wrap; }
+    .lyrics-num { font-family: var(--display); font-size: clamp(3rem, 6vw, 5rem); font-weight: 300; font-style: italic; color: var(--gold); opacity: 0.2; line-height: 1; flex-shrink: 0; }
+    .lyrics-title-block { flex: 1; }
+    .lyrics-project { font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+    .lyrics-title { font-family: var(--display); font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 300; color: var(--parchment); line-height: 1.1; }
+    .lyrics-body { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+    .lyrics-text { font-family: var(--display); font-size: 1.05rem; font-weight: 300; color: var(--muted); line-height: 2; }
+    .lyrics-text .section-tag { display: block; font-family: var(--body); font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--dim); margin-top: 28px; margin-bottom: 6px; }
+    .lyrics-text .section-tag:first-child { margin-top: 0; }
+    .lyrics-text .lyric-line { display: block; color: var(--muted); }
+    .lyrics-text .lyric-line.emphasis { color: var(--parchment); font-style: italic; }
+    .lyrics-text .lyric-break { display: block; height: 8px; }
+    .lyrics-aside { position: sticky; top: 100px; }
+    .lyrics-embed { margin-bottom: 24px; }
+    .lyrics-embed iframe { display: block; width: 100%; border: none; }
+    .lyrics-embed-label { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--dim); margin-bottom: 10px; }
+    .lyrics-note { padding: 20px; background: var(--overlay); border-left: 1px solid var(--gold-dim); margin-top: 20px; }
+    .lyrics-note p { font-family: var(--display); font-style: italic; font-size: 0.9rem; color: var(--muted); line-height: 1.8; }
+    .lyrics-sc-embed { margin-bottom: 24px; }
+    .lyrics-sc-embed iframe { display: block; width: 100%; border: none; }
+    .back-to-top { display: inline-block; margin-top: 40px; font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--dim); text-decoration: none; border-bottom: 1px solid var(--border); padding-bottom: 2px; transition: color 0.2s, border-color 0.2s; cursor: pointer; background: none; font-family: var(--body); }
+    .back-to-top:hover { color: var(--gold); border-color: var(--gold-dim); }
+
+    /* FOOTER */
+    footer { background: var(--black); border-top: 1px solid var(--border); padding: 48px 0; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; }
+    .footer-logo { font-family: var(--display); font-size: 1rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--parchment); text-decoration: none; }
+    .footer-socials { display: flex; gap: 24px; }
+    .footer-socials a { font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--dim); text-decoration: none; transition: color 0.2s; }
+    .footer-socials a:hover { color: var(--gold); }
+    .footer-copy { font-size: 0.65rem; letter-spacing: 0.1em; color: var(--dim); width: 100%; text-align: center; margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--border); }
+
+    @keyframes fadeUp { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:translateY(0); } }
+
+    @media (max-width: 768px) {
+      nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+      .nav-links.open { display: flex; flex-direction: column; position: fixed; inset: 0; background: rgba(10,10,12,0.98); align-items: center; justify-content: center; gap: 32px; z-index: 99; }
+      .nav-links.open a { font-size: 1.2rem; }
+      .nav-hamburger { display: flex; z-index: 101; position: relative; }
+      .container { padding: 0 24px; }
+      .hero-content { padding: 0 24px; }
+      .lyrics-body { grid-template-columns: 1fr; gap: 40px; }
+      .lyrics-aside { position: static; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="nav">
+    <a href="index.html" class="nav-logo">Darenstefan</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="laing.html">LAING</a></li>
+      <li><a href="index.html#music">Music</a></li>
+      <li><a href="index.html#videos">Videos</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="press.html">Press</a></li>
+      <li><a href="lyrics.html" class="active">Lyrics</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section id="lyrics-hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grain"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Official Lyrics · Daren Stefan</p>
+      <h1 class="hero-title">Every Word,<br>Intentional.</h1>
+      <p class="hero-sub">Seven songs. All the feelings in between.</p>
+    </div>
+  </section>
+
+  <!-- SONG INDEX -->
+  <section id="song-index">
+    <div class="container">
+      <p class="index-label reveal">Song Index</p>
+
+      <div class="index-group reveal">
+        <p class="index-group-title">LAING — Act One · Digital Intimacy</p>
+        <div class="index-list">
+          <div class="index-item" onclick="scrollToSong('typing')">
+            <span class="index-num">01</span>
+            <span class="index-name">Typing…</span>
+            <span class="index-tag">LAING · Act I</span>
+            <span class="index-arrow">→</span>
+          </div>
+          <div class="index-item" onclick="scrollToSong('insomnia')">
+            <span class="index-num">02</span>
+            <span class="index-name">Your Morning Is My Insomnia</span>
+            <span class="index-tag">LAING · Act I</span>
+            <span class="index-arrow">→</span>
+          </div>
+          <div class="index-item" onclick="scrollToSong('strange')">
+            <span class="index-num">03</span>
+            <span class="index-name">Stay Strange</span>
+            <span class="index-tag">LAING · Act I</span>
+            <span class="index-arrow">→</span>
+          </div>
+          <div class="index-item" onclick="scrollToSong('translation')">
+            <span class="index-num">04</span>
+            <span class="index-name">Love in Translation</span>
+            <span class="index-tag">LAING · Act I</span>
+            <span class="index-arrow">→</span>
+          </div>
+          <div class="index-item" onclick="scrollToSong('heaven')">
+            <span class="index-num">05</span>
+            <span class="index-name">Temporary Heaven</span>
+            <span class="index-tag">LAING · Act I</span>
+            <span class="index-arrow">→</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="index-group reveal">
+        <p class="index-group-title">Singles</p>
+        <div class="index-list">
+          <div class="index-item" onclick="scrollToSong('wildflower')">
+            <span class="index-num">S1</span>
+            <span class="index-name">Wildflower (His Reply)</span>
+            <span class="index-tag">Single · 2026</span>
+            <span class="index-arrow">→</span>
+          </div>
+          <div class="index-item" onclick="scrollToSong('glass')">
+            <span class="index-num">S2</span>
+            <span class="index-name">Me in the Glass</span>
+            <span class="index-tag">Single · SoundCloud</span>
+            <span class="index-arrow">→</span>
+          </div>
+          <div class="index-item" onclick="scrollToSong('everybody')">
+            <span class="index-num">S3</span>
+            <span class="index-name">Everybody Remembers Me Differently</span>
+            <span class="index-tag">Single · SoundCloud</span>
+            <span class="index-arrow">→</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRACK 01: TYPING -->
+  <section class="lyrics-section" id="typing">
+    <div class="container">
+      <div class="lyrics-header reveal">
+        <div class="lyrics-num">01</div>
+        <div class="lyrics-title-block">
+          <p class="lyrics-project">LAING · Act One · Track 01</p>
+          <h2 class="lyrics-title">Typing…</h2>
+        </div>
+      </div>
+      <div class="lyrics-body reveal">
+        <div class="lyrics-text">
+          <span class="section-tag">Verse 1</span>
+          <span class="lyric-line">I read your silence like subtitles</span>
+          <span class="lyric-line">on a film I haven't seen</span>
+          <span class="lyric-line">You sent a period instead of nothing</span>
+          <span class="lyric-line">which means something</span>
+          <span class="lyric-line emphasis">which means</span>
+          <span class="lyric-break"></span>
+          <span class="lyric-line">Three dots blinking like hesitation</span>
+          <span class="lyric-line">a sentence dying before it's born</span>
+          <span class="lyric-line">I've been fluent in almost</span>
+          <span class="lyric-line">since before you</span>
+
+          <span class="section-tag">Pre-Chorus</span>
+          <span class="lyric-line">You arrived as pixels first</span>
+          <span class="lyric-line">a face in a rectangle of light</span>
+          <span class="lyric-line">I didn't know what you sounded like</span>
+          <span class="lyric-line">when you were losing an argument</span>
+          <span class="lyric-line">or laughing at something that wasn't funny</span>
+          <span class="lyric-line emphasis">or just</span>
+
+          <span class="section-tag">Chorus</span>
+          <span class="lyric-line emphasis">Are you still there</span>
+          <span class="lyric-line emphasis">are you still</span>
+          <span class="lyric-line emphasis">are you</span>
+          <span class="lyric-line emphasis">are you still there</span>
+          <span class="lyric-break"></span>
+          <span class="lyric-line">I keep the window open</span>
+          <span class="lyric-line">cursor blinking in an empty box</span>
+          <span class="lyric-line">everything I almost said to you</span>
+          <span class="lyric-line">living in the drafts</span>
+
+          <span class="section-tag">Verse 2</span>
+          <span class="lyric-line">I memorised the timestamps</span>
+          <span class="lyric-line">2:47 AM — you typed and stopped</span>
+          <span class="lyric-line">I told myself you were sleeping</span>
+          <span class="lyric-line">I told myself a lot of things</span>
+          <span class="lyric-break"></span>
+          <span class="lyric-line">You exist in three timezones</span>
+          <span class="lyric-line">depending on which version of me</span>
+          <span class="lyric-line">is remembering you</span>
+
+          <span class="section-tag">Bridge</span>
+          <span class="lyric-line">This is not a love song yet</span>
+          <span class="lyric-line">this is the moment before you press send</span>
+          <span class="lyric-line">the weight of a word</span>
+          <span class="lyric-line">you haven't chosen</span>
+          <span class="lyric-break"></span>
+          <span class="lyric-line">This is the login screen</span>
+          <span class="lyric-line emphasis">loading</span>
+          <span class="lyric-line emphasis">loading</span>
+          <span class="lyric-line emphasis">still loading</span>
+
+          <span class="section-tag">Outro</span>
+          <span class="lyric-line">I don't know your handwriting</span>
+          <span class="lyric-line">I don't know how you take your coffee</span>
+          <span class="lyric-line">I don't know what your quiet sounds like</span>
+          <span class="lyric-line">in a room I'm actually standing in</span>
+          <span class="lyric-break"></span>
+          <span class="lyric-line emphasis">but I know the rhythm of your ellipsis</span>
+          <span class="lyric-line emphasis">and I think that's where this starts</span>
+        </div>
+        <div class="lyrics-aside">
+          <div class="lyrics-embed">
+            <p class="lyrics-embed-label">Stream on Spotify</p>
+            <iframe src="https://open.spotify.com/embed/track/7yT6qd7kfYT2R32sJIlbh1?utm_source=generator&theme=0" height="80" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          </div>
+          <div class="lyrics-note"><p>"This is not a love song yet — this is the moment before you press send." The whole album starts here, in the gap between feeling something and saying it.</p></div>
+          <button class="back-to-top" onclick="scrollToSong('song-index')">↑ Back to index</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRACK 02: YOUR MORNING IS MY INSOMNIA -->
+  <section class="lyrics-section" id="insomnia">
+    <div class="container">
+      <div class="lyrics-header reveal">
+        <div class="lyrics-num">02</div>
+        <div class="lyrics-title-block">
+          <p class="lyrics-project">LAING · Act One · Track 02</p>
+          <h2 class="lyrics-title">Your Morning Is My Insomnia</h2>
+        </div>
+      </div>
+      <div class="lyrics-body reveal">
+        <div class="lyrics-text">
+          <span class="section-tag">Verse 1</span>
+          <span class="lyric-line">I know your 7 AM</span>
+          <span class="lyric-line">better than my own midnight</span>
+          <span class="lyric-line">the way your voice comes in slow</span>
+          <span class="lyric-line">before the coffee</span>
+          <span class="lyric-line">before you're really there</span>
+          <span class="lyric-break"></span>
+          <span class="lyric-line">I learned your curtains</span>
+          <span class="lyric-line">the colour of your window light</span>
+          <span class="lyric-line">gold on your side</span>
+          <span class="lyric-line emphasis">blue on mine</span>
+          <span class="lyric-line">we never talk about that</span>
+          <span class="lyric-break"></span>
+          <span class="lyric-line">Your city is waking up</span>
+          <span class="lyric-line">and I'm still in yesterday</span>
+          <span class="lyric-line">holding the phone like it's something warm</span>
+
+          <span class="section-tag">Pre-Chorus</span>
+          <span class="lyric-line">I rearranged my sleep</span>
+          <span class="lyric-line">so the hours would overlap</span>
+          <span class="lyric-line">I told myself it was love</span>
+          <span class="lyric-line">maybe it was</span>
+          <span class="lyric-line emphasis">maybe it was just</span>
+          <span class="lyric-line">wanting to be somewhere</span>
+          <span class="lyric-line">I couldn't be</span>
+
+          <span class="section-tag">Chorus</span>
+          <span class="lyric-line emphasis">Your morning is my insomnia</span>
+          <span class="lyric-line">the sun on your face</span>
+          <span class="lyric-line">the dark at my back</span>
+          <span class="lyric-line">I stay awake just to exist beside you</span>
+          <span class="lyric-line">in a timezone that was never mine</span>
+          <span class="lyric-break"></span>
+          <span class="lyric-line">Your coffee going cold</span>
+          <span class="lyric-line">my ceiling going quiet</span>
+          <span class="lyric-line">I don't know where we are</span>
+          <span class="lyric-line emphasis">but I'm not leaving</span>
+
+          <span class="section-tag">Verse 2</span>
+          <span class="lyric-line">I know when you go quiet</span>
+          <span class="lyric-line">it's 11 PM where you are</span>
+          <span class="lyric-line">you're brushing your teeth</span>
+          <span class="lyric-line">or falling asleep mid-sentence</span>
+          <span class="lyric-line">and I wait</span>
+          <span class="lyric-break"></span>
+          <span class="lyric-line">I know the lag before your laugh</span>
+          <span class="lyric-line">half a second of silence</span>
+          <span class="lyric-line emphasis">then you</span>
+          <span class="lyric-break"></span>
+          <span class="lyric-line">I've watched you freeze mid-frame</span>
+          <span class="lyric-line">pixelated, mid-blink</span>
+          <span class="lyric-line">and I thought</span>
+          <span class="lyric-line emphasis">even buffering</span>
+          <span class="lyric-line emphasis">you're the most real thing I have right now</span>
+
+          <span class="section-tag">Bridge</span>
+          <span class="lyric-line">I saw a departure board once</span>
+          <span class="lyric-line">your city on the screen</span>
+          <span class="lyric-line">and I stood there</span>
+          <span class="lyric-line">longer than I should have</span>
+          <span class="lyric-break"></span>
+          <span class="lyric-line">I don't know what gate</span>
+          <span class="lyric-line">I don't know what I'd even say</span>
+          <span class="lyric-line">I just wanted the distance</span>
+          <span class="lyric-line emphasis">to have a door somewhere</span>
+          <span class="lyric-break"></span>
+          <span class="lyric-line">you texted me "good morning"</span>
+          <span class="lyric-line">at 3 AM my time</span>
+          <span class="lyric-line">and I said "good morning"</span>
+          <span class="lyric-line">like I hadn't been awake for hours</span>
+          <span class="lyric-line emphasis">waiting for exactly that</span>
+
+          <span class="section-tag">Final Chorus</span>
+          <span class="lyric-line emphasis">Your morning is my insomnia</span>
+          <span class="lyric-line">I rewired myself around your light</span>
+          <span class="lyric-line">I stay awake just to exist beside you</span>
+          <span class="lyric-line">because beside you is the only place</span>
+          <span class="lyric-line">that doesn't feel like waiting</span>
+          <span class="lyric-break"></span>
+          <span class="lyric-line">Your voice still in my headphones</span>
+          <span class="lyric-line">your city in my search bar</span>
+          <span class="lyric-line">I don't know where we're going</span>
+          <span class="lyric-line emphasis">but I'll be awake when you get there</span>
+        </div>
+        <div class="lyrics-aside">
+          <div class="lyrics-embed">
+            <p class="lyrics-embed-label">Stream on Spotify</p>
+            <iframe src="https://open.spotify.com/embed/track/18HC2NTs2o9lZFEWGw9RIM?utm_source=generator&theme=0" height="80" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          </div>
+          <div class="lyrics-note"><p>"Gold on your side. Blue on mine." Two people in the same conversation, in entirely different worlds. This song is about the sacrifice of reshaping your life around someone else's timezone.</p></div>
+          <button class="back-to-top" onclick="scrollToSong('song-index')">↑ Back to index</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRACK 03: STAY STRANGE -->
+  <section class="lyrics-section" id="strange">
+    <div class="container">
+      <div class="lyrics-header reveal">
+        <div class="lyrics-num">03</div>
+        <div class="lyrics-title-block">
+          <p class="lyrics-project">LAING · Act One · Track 03</p>
+          <h2 class="lyrics-title">Stay Strange</h2>
+        </div>
+      </div>
+      <div class="lyrics-body reveal">
+        <div class="lyrics-text">
+          <span class="section-tag">Verse 1</span>
+          <span class="lyric-line">You talk too loud in quiet places</span>
+          <span class="lyric-line">you laugh before the joke is finished</span>
+          <span class="lyric-line">you apologise for things</span>
+          <span class="lyric-line">that didn't need an apology</span>
+          <span class="lyric-line">and then forget the ones that did</span>
+          <span class="lyric-break"></span>
+          <span class="lyric-line">You make a face when you're thinking</span>
+          <span class="lyric-line">like the thought is physically happening</span>
+          <span class="lyric-line">somewhere behind your left eye</span>
+          <span class="lyric-line">I've never told you that</span>
+          <span class="lyric-line emphasis">I just watch</span>
+          <span class="lyric-break"></span>
+          <span class="lyric-line">You reorganise your feelings</span>
+          <span class="lyric-line">in the wrong order</span>
+          <span class="lyric-line">hurt first</span>
+          <span class="lyric-line">then confused</span>
+          <span class="lyric-line">then honest</span>
+          <span class="lyric-line">three days later</span>
+          <span class="lyric-line">in a voice note</span>
+          <span class="lyric-line">at 1 AM</span>
+          <span class="lyric-line emphasis">I love that about you</span>
+
+          <span class="section-tag">Chorus</span>
+          <span class="lyric-line emphasis">Stay strange</span>
+          <span class="lyric-line">don't sand the edges down for me</span>
+          <span class="lyric-line emphasis">stay strange</span>
+          <span class="lyric-line">I fell for the parts that don't make sense</span>
+          <span class="lyric-line">your weird little fears</span>
+          <span class="lyric-line">your contradictions</span>
+          <span class="lyric-line">the way you contain</span>
+          <span class="lyric-line">things that shouldn't fit together</span>
+          <span class="lyric-line emphasis">but somehow do</span>
+          <span class="lyric-break"></span>
+          <span class="lyric-line">Please don't become</span>
+          <span class="lyric-line emphasis">easier to love</span>
+
+          <span class="section-tag">Verse 2</span>
+          <span class="lyric-line">You cry at adverts</span>
+          <span class="lyric-line">but not at funerals</span>
+          <span class="lyric-line">you said you process things on a delay</span>
+          <span class="lyric-line">like grief arrives two weeks after</span>
+          <span class="lyric-line">in the middle of something unrelated</span>
+          <span class="lyric-break"></span>
+          <span class="lyric-line">You're terrified of being too much</span>
+          <span class="lyric-line">so sometimes you make yourself less</span>
+          <span class="lyric-line">and I can always tell</span>
+          <span class="lyric-break"></span>
+          <span class="lyric-line">there's a version of you</span>
+          <span class="lyric-line">hovering just outside the sentence</span>
+          <span class="lyric-line">waiting to see if it's safe</span>
+          <span class="lyric-line emphasis">It's safe</span>
+
+          <span class="section-tag">Bridge</span>
+          <span class="lyric-line">I think we've both spent a long time</span>
+          <span class="lyric-line">trying to be the version</span>
+          <span class="lyric-line">someone could handle</span>
+          <span class="lyric-break"></span>
+          <span class="lyric-line">what if we just didn't do that</span>
+          <span class="lyric-line">what if we just showed up wrong</span>
+          <span class="lyric-line emphasis">and stayed anyway</span>
+
+          <span class="section-tag">Final Chorus</span>
+          <span class="lyric-line emphasis">Stay strange</span>
+          <span class="lyric-line">I'm learning the language of you</span>
+          <span class="lyric-line">your awkward silences</span>
+          <span class="lyric-line">your over-explanations</span>
+          <span class="lyric-line">the way you love</span>
+          <span class="lyric-line emphasis">like you're still deciding if you're allowed to</span>
+          <span class="lyric-break"></span>
+          <span class="lyric-line emphasis">You're allowed to</span>
+          <span class="lyric-break"></span>
+          <span class="lyric-line">I don't want easier</span>
+          <span class="lyric-line emphasis">I want you</span>
+        </div>
+        <div class="lyrics-aside">
+          <div class="lyrics-embed">
+            <p class="lyrics-embed-label">Stream on Spotify</p>
+            <iframe src="https://open.spotify.com/embed/track/46jn8Izluqxx7nDiaTKRL0?utm_source=generator&theme=0" height="80" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          </div>
+          <div class="lyrics-note"><p>"There's a version of you hovering just outside the sentence, waiting to see if it's safe." A love song for the parts of a person they were taught to hide.</p></div>
+          <button class="back-to-top" onclick="scrollToSong('song-index')">↑ Back to index</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRACK 04: LOVE IN TRANSLATION -->
+  <section class="lyrics-section" id="translation">
+    <div class="container">
+      <div class="lyrics-header reveal">
+        <div class="lyrics-num">04</div>
+        <div class="lyrics-title-block">
+          <p class="lyrics-project">LAING · Act One · Track 04</p>
+          <h2 class="lyrics-title">Love in Translation</h2>
+        </div>
+      </div>
+      <div class="lyrics-body reveal">
+        <div class="lyrics-text">
+          <span class="section-tag">Verse 1</span>
+          <span class="lyric-line">I said the wrong thing again</span>
+          <span class="lyric-line">you went quiet in that specific way</span>
+          <span class="lyric-line">not angry</span>
+          <span class="lyric-line emphasis">just somewhere I couldn't follow</span>
+          <span class="lyric-break"></span>
+          <span class="lyric-line">I meant I was scared</span>
+          <span class="lyric-line">it came out like distance</span>
+          <span class="lyric-line">I meant stay</span>
+          <span class="lyric-line">it came out like questions</span>
+          <span class="lyric-break"></span>
+          <span class="lyric-line">I have an accent in your language</span>
+          <span class="lyric-line">I'm still learning</span>
+          <span class="lyric-line">how to say what I mean</span>
+          <span class="lyric-line">without losing what I mean along the way</span>
+
+          <span class="section-tag">Chorus</span>
+          <span class="lyric-line emphasis">We're speaking in translation</span>
+          <span class="lyric-line">finding each other</span>
+          <span class="lyric-line">in the space between the words</span>
+          <span class="lyric-line emphasis">love in translation</span>
+          <span class="lyric-line">imperfect and alive</span>
+          <span class="lyric-break"></span>
+          <span class="lyric-line">I don't need you to understand me perfectly</span>
+          <span class="lyric-line emphasis">I need you to stay</span>
+          <span class="lyric-line">while we figure out what we mean</span>
+
+          <span class="section-tag">Verse 2</span>
+          <span class="lyric-line">You explained yourself three different ways</span>
+          <span class="lyric-line">like you were sure I'd get it on the third</span>
+          <span class="lyric-line">and on the third I finally did</span>
+          <span class="lyric-break"></span>
+          <span class="lyric-line">but it wasn't the words</span>
+          <span class="lyric-line">it was the way you breathed</span>
+          <span class="lyric-line">before you tried again</span>
+          <span class="lyric-line emphasis">that patience</span>
+          <span class="lyric-line emphasis">that willingness</span>
+          <span class="lyric-line">to be misread and keep going</span>
+
+          <span class="section-tag">Bridge</span>
+          <span class="lyric-line">every relationship</span>
+          <span class="lyric-line">has a private language</span>
+          <span class="lyric-line">that takes years to build</span>
+          <span class="lyric-break"></span>
+          <span class="lyric-line">we're still in the early grammar</span>
+          <span class="lyric-line">still mispronouncing each other</span>
+          <span class="lyric-line">still explaining what we should eventually just know</span>
+          <span class="lyric-break"></span>
+          <span class="lyric-line emphasis">but this —</span>
+          <span class="lyric-line emphasis">this stumbling toward each other</span>
+          <span class="lyric-line emphasis">this is the part I want to remember</span>
+
+          <span class="section-tag">Final Chorus</span>
+          <span class="lyric-line emphasis">We're speaking in translation</span>
+          <span class="lyric-line">and I'm not afraid anymore</span>
+          <span class="lyric-line emphasis">love in translation is still love</span>
+          <span class="lyric-line">maybe it's the realest kind</span>
+          <span class="lyric-break"></span>
+          <span class="lyric-line">where you choose to stay</span>
+          <span class="lyric-line">inside the misunderstanding</span>
+          <span class="lyric-line emphasis">and keep reaching</span>
+          <span class="lyric-line emphasis">until something finally lands</span>
+
+          <span class="section-tag">Outro</span>
+          <span class="lyric-line emphasis">I think I'm starting to understand you</span>
+          <span class="lyric-line emphasis">I think I'm starting to understand you</span>
+        </div>
+        <div class="lyrics-aside">
+          <div class="lyrics-embed">
+            <p class="lyrics-embed-label">Stream on Spotify</p>
+            <iframe src="https://open.spotify.com/embed/track/2Q0YTlr0u6wGQLkHJXrxRu?utm_source=generator&theme=0" height="80" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          </div>
+          <div class="lyrics-note"><p>"I have an accent in your language." About the gap between what we feel and what we're able to say — and choosing to stay in that gap rather than give up on it.</p></div>
+          <button class="back-to-top" onclick="scrollToSong('song-index')">↑ Back to index</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRACK 05: TEMPORARY HEAVEN -->
+  <section class="lyrics-section" id="heaven">
+    <div class="container">
+      <div class="lyrics-header reveal">
+        <div class="lyrics-num">05</div>
+        <div class="lyrics-title-block">
+          <p class="lyrics-project">LAING · Act One · Track 05</p>
+          <h2 class="lyrics-title">Temporary Heaven</h2>
+        </div>
+      </div>
+      <div class="lyrics-body reveal">
+        <div class="lyrics-text">
+          <span class="section-tag">Verse 1</span>
+          <span class="lyric-line">We've been lucky with the signal lately</span>
+          <span class="lyric-line">both of us in rooms</span>
+          <span class="lyric-line">that feel like the same room</span>
+          <span class="lyric-line emphasis">almost</span>
+          <span class="lyric-break"></span>
+          <span class="lyric-line">I've stopped counting the hours between us</span>
+          <span class="lyric-line">I just live here now</span>
+          <span class="lyric-line">in this version of you</span>
+          <span class="lyric-line">that fits inside a screen</span>
+          <span class="lyric-break"></span>
+          <span class="lyric-line emphasis">It's been good</span>
+          <span class="lyric-line emphasis">hasn't it</span>
+          <span class="lyric-line emphasis">it's been so good</span>
+
+          <span class="section-tag">Chorus</span>
+          <span class="lyric-line emphasis">This is our temporary heaven</span>
+          <span class="lyric-line">just enough distance to keep it soft</span>
+          <span class="lyric-line">just enough screen to keep it safe</span>
+          <span class="lyric-line">just enough space</span>
+          <span class="lyric-line">that neither of us</span>
+          <span class="lyric-line">has had to be completely real yet</span>
+          <span class="lyric-break"></span>
+          <span class="lyric-line emphasis">and I love it here</span>
+          <span class="lyric-line emphasis">god I love it here</span>
+          <span class="lyric-line">but I can feel the countdown</span>
+          <span class="lyric-line">somewhere I can't see it</span>
+
+          <span class="section-tag">Verse 2</span>
+          <span class="lyric-line">What if you laugh differently in person</span>
+          <span class="lyric-line">what if the silence between us doesn't travel</span>
+          <span class="lyric-line emphasis">what if I'm better at loving you from here</span>
+          <span class="lyric-break"></span>
+          <span class="lyric-line">What if I reach for your hand</span>
+          <span class="lyric-line">and the timing is wrong</span>
+          <span class="lyric-line">what if we lose the lag</span>
+          <span class="lyric-line">the buffer</span>
+          <span class="lyric-line emphasis">the half second of grace</span>
+          <span class="lyric-line">that made us gentle with each other</span>
+
+          <span class="section-tag">Bridge</span>
+          <span class="lyric-line">I've thought about the gate</span>
+          <span class="lyric-line">the arrivals board</span>
+          <span class="lyric-line">your name on my phone as I'm walking through</span>
+          <span class="lyric-break"></span>
+          <span class="lyric-line">I want to meet you</span>
+          <span class="lyric-line emphasis">I want to meet you so badly</span>
+          <span class="lyric-line">I'm also terrified</span>
+          <span class="lyric-line">of what we'll have to become</span>
+          <span class="lyric-line emphasis">when there's no more distance left to hide in</span>
+
+          <span class="section-tag">Final Chorus</span>
+          <span class="lyric-line emphasis">This was our temporary heaven</span>
+          <span class="lyric-line">the version of us that distance made possible</span>
+          <span class="lyric-line">the softest we'll ever be with each other</span>
+          <span class="lyric-break"></span>
+          <span class="lyric-line">I don't regret a single night</span>
+          <span class="lyric-line">I don't regret the timezones</span>
+          <span class="lyric-line">the frozen frames</span>
+          <span class="lyric-line">the calls that cut out right before something important</span>
+
+          <span class="section-tag">Outro</span>
+          <span class="lyric-line emphasis">Maybe we survived</span>
+          <span class="lyric-line emphasis">because the world stayed between us.</span>
+        </div>
+        <div class="lyrics-aside">
+          <div class="lyrics-embed">
+            <p class="lyrics-embed-label">Stream on Spotify</p>
+            <iframe src="https://open.spotify.com/embed/track/5cbhnIMgZOKJYITarhdDC8?utm_source=generator&theme=0" height="80" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          </div>
+          <div class="lyrics-note"><p>"Just enough distance to keep it soft." The most honest song in Act One — about how distance can protect a relationship from the weight of reality, and the fear of what happens when it closes.</p></div>
+          <button class="back-to-top" onclick="scrollToSong('song-index')">↑ Back to index</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SINGLE: WILDFLOWER (HIS REPLY) -->
+  <section class="lyrics-section" id="wildflower">
+    <div class="container">
+      <div class="lyrics-header reveal">
+        <div class="lyrics-num">S1</div>
+        <div class="lyrics-title-block">
+          <p class="lyrics-project">Single · 2026</p>
+          <h2 class="lyrics-title">Wildflower (His Reply)</h2>
+        </div>
+      </div>
+      <div class="lyrics-body reveal">
+        <div class="lyrics-text">
+          <span class="section-tag">Verse 1</span>
+          <span class="lyric-line">Yeah, things fell apart</span>
+          <span class="lyric-line">and I won't lie about the scars</span>
+          <span class="lyric-line">She was real, I won't pretend</span>
+          <span class="lyric-line">we had something, then we didn't</span>
+          <span class="lyric-break"></span>
+          <span class="lyric-line">And I held you while it hurt me</span>
+          <span class="lyric-line">to admit that I'm not perfect</span>
+          <span class="lyric-line">but I showed up, I was present</span>
+          <span class="lyric-line">every night until the end</span>
+
+          <span class="section-tag">Pre-Chorus</span>
+          <span class="lyric-line">And yeah, sometimes a song comes on</span>
+          <span class="lyric-line">and I'm back where I don't belong</span>
+          <span class="lyric-line">just a ghost of something over, fading out</span>
+          <span class="lyric-break"></span>
+          <span class="lyric-line">But I reach for you in the darkness</span>
+          <span class="lyric-line">you're the one who makes it worthless</span>
+          <span class="lyric-line">every memory I'm holding</span>
+          <span class="lyric-line emphasis">I'd let go of, no doubt</span>
+
+          <span class="section-tag">Chorus</span>
+          <span class="lyric-line emphasis">'Cause I don't see her when I look at you</span>
+          <span class="lyric-line emphasis">No, I don't</span>
+          <span class="lyric-line">I see everything I almost threw away</span>
+          <span class="lyric-line">I see you crying in that hotel too</span>
+          <span class="lyric-line emphasis">And I'm sorry</span>
+          <span class="lyric-line emphasis">God, I'm sorry that I made you feel that way</span>
+
+          <span class="section-tag">Verse 2</span>
+          <span class="lyric-line">Yeah, she was happy</span>
+          <span class="lyric-line">yeah, she was free</span>
+          <span class="lyric-line">maybe leather, maybe better</span>
+          <span class="lyric-line">on the surface, not for me</span>
+          <span class="lyric-break"></span>
+          <span class="lyric-line">'Cause you're the one who knows my quiet</span>
+          <span class="lyric-line">you're the one who held the riot</span>
+          <span class="lyric-line">in my chest until it softened</span>
+          <span class="lyric-line emphasis">into something I can breathe</span>
+
+          <span class="section-tag">Bridge</span>
+          <span class="lyric-line">You asked if she's in the back of my mind</span>
+          <span class="lyric-line">in your eyes —</span>
+          <span class="lyric-line">yeah, sometimes a shadow passes through</span>
+          <span class="lyric-line emphasis">but it's your face I find</span>
+          <span class="lyric-break"></span>
+          <span class="lyric-line">You're not second, you're not settling</span>
+          <span class="lyric-line">you're not her ghost in disguise</span>
+          <span class="lyric-line emphasis">You're the reason I stopped running</span>
+          <span class="lyric-line emphasis">you're the one I choose every time</span>
+
+          <span class="section-tag">Outro</span>
+          <span class="lyric-line">So did I cross the line?</span>
+          <span class="lyric-line emphasis">Yeah, I did</span>
+          <span class="lyric-line">And I'd spend every day making sure</span>
+          <span class="lyric-line">you never have to wonder</span>
+          <span class="lyric-line emphasis">you never have to wonder again</span>
+        </div>
+        <div class="lyrics-aside">
+          <div class="lyrics-embed">
+            <p class="lyrics-embed-label">Stream on Spotify</p>
+            <iframe src="https://open.spotify.com/embed/track/0844qgF9TOwa9YslbqnRyr?utm_source=generator&theme=0" height="80" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          </div>
+          <div class="lyrics-note"><p>A male-perspective response to Billie Eilish's "WILDFLOWER." Not a rebuttal — a reply. The voice of the person on the other side of that story, trying to be honest about the mess and the love at the same time.</p></div>
+          <button class="back-to-top" onclick="scrollToSong('song-index')">↑ Back to index</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SINGLE: ME IN THE GLASS -->
+  <section class="lyrics-section" id="glass">
+    <div class="container">
+      <div class="lyrics-header reveal">
+        <div class="lyrics-num">S2</div>
+        <div class="lyrics-title-block">
+          <p class="lyrics-project">Single · SoundCloud</p>
+          <h2 class="lyrics-title">Me in the Glass</h2>
+        </div>
+      </div>
+      <div class="lyrics-body reveal">
+        <div class="lyrics-text">
+          <span class="section-tag">Verse 1</span>
+          <span class="lyric-line">You know my lockscreen, you know my split shoes</span>
+          <span class="lyric-line">you know I flinch at sirens, like you live in my ribs</span>
+          <span class="lyric-line">you text my old scars before I say them out loud</span>
+          <span class="lyric-line">you know my mother's hallway and the hole in my mouth</span>
+
+          <span class="section-tag">Pre-Chorus</span>
+          <span class="lyric-line">You stand in the frame of every bad dream</span>
+          <span class="lyric-line emphasis">how do you know what I never speak</span>
+
+          <span class="section-tag">Chorus</span>
+          <span class="lyric-line emphasis">You know me too well, you know me too well</span>
+          <span class="lyric-line">I swear I've seen your hands inside my head</span>
+          <span class="lyric-line emphasis">you know me too well, you know me too well</span>
+          <span class="lyric-line">if you were my shadow, why do I run</span>
+
+          <span class="section-tag">Verse 2</span>
+          <span class="lyric-line">You wait by the station where I miss that train</span>
+          <span class="lyric-line">you know the night I lied in the shape of my shame</span>
+          <span class="lyric-line">you count every bottle on the sink by my bed</span>
+          <span class="lyric-line emphasis">you say don't go that way with my own voice in my head</span>
+
+          <span class="section-tag">Bridge</span>
+          <span class="lyric-line">That cut on your brow, that ring on your hand</span>
+          <span class="lyric-line">that shaking breath, I know that man</span>
+          <span class="lyric-line">my name on your tongue like a prayer gone cold</span>
+          <span class="lyric-line emphasis">you're not hunting me, you're what I'll become</span>
+          <span class="lyric-break"></span>
+          <span class="lyric-line">I came back too late, I came back for this</span>
+          <span class="lyric-line emphasis">to stop my own hands from choosing the abyss</span>
+
+          <span class="section-tag">Final Chorus</span>
+          <span class="lyric-line emphasis">I know me too well, I know me too well</span>
+          <span class="lyric-line">I'm standing in the glass inside my hell</span>
+          <span class="lyric-line emphasis">I know me too well, I know me too well</span>
+          <span class="lyric-line">I'm not your shadow, I am the one who ran</span>
+          <span class="lyric-break"></span>
+          <span class="lyric-line emphasis">I know me too well, I know me too well</span>
+          <span class="lyric-line emphasis">now hold me in this second if you can</span>
+        </div>
+        <div class="lyrics-aside">
+          <div class="lyrics-sc-embed">
+            <p class="lyrics-embed-label">Stream on SoundCloud</p>
+            <iframe width="100%" height="80" scrolling="no" frameborder="no" allow="autoplay; encrypted-media"
+              src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%3Atracks%3A2317599608&color=%23c8a97e&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false"
+              loading="lazy"></iframe>
+          </div>
+          <div class="lyrics-note"><p>"You're not hunting me, you're what I'll become." One of the most psychologically complex songs in the catalogue — a confrontation with a future self, or a past one. The mirror as a villain, then as a saviour.</p></div>
+          <button class="back-to-top" onclick="scrollToSong('song-index')">↑ Back to index</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SINGLE: EVERYBODY REMEMBERS ME DIFFERENTLY -->
+  <section class="lyrics-section" id="everybody">
+    <div class="container">
+      <div class="lyrics-header reveal">
+        <div class="lyrics-num">S3</div>
+        <div class="lyrics-title-block">
+          <p class="lyrics-project">Single · SoundCloud</p>
+          <h2 class="lyrics-title">Everybody Remembers Me Differently</h2>
+        </div>
+      </div>
+      <div class="lyrics-body reveal">
+        <div class="lyrics-text">
+          <span class="section-tag">Verse 1</span>
+          <span class="lyric-line">They say my name in pieces</span>
+          <span class="lyric-line emphasis">Kind. Dangerous.</span>
+          <span class="lyric-line">I heard it from the next room</span>
+          <span class="lyric-line emphasis">Dead. Saved you.</span>
+          <span class="lyric-break"></span>
+          <span class="lyric-line">One voice says I was gentle</span>
+          <span class="lyric-line">hands open, eyes like rain</span>
+          <span class="lyric-line">one voice locks the door tight</span>
+          <span class="lyric-line">says I had a fevered face</span>
+          <span class="lyric-break"></span>
+          <span class="lyric-line">a third says I was buried</span>
+          <span class="lyric-line">long before you knew my skin</span>
+          <span class="lyric-line">and you look at me like a stranger</span>
+          <span class="lyric-line emphasis">like I'm not allowed back in</span>
+
+          <span class="section-tag">Pre-Chorus</span>
+          <span class="lyric-line">So tell me what is real</span>
+          <span class="lyric-line">if every mouth rewrites me</span>
+          <span class="lyric-line">why do your memories</span>
+          <span class="lyric-line emphasis">sound like they're indicting me</span>
+          <span class="lyric-break"></span>
+          <span class="lyric-line">I reach for my reflection</span>
+          <span class="lyric-line">it answers like a glitch</span>
+          <span class="lyric-line">I blink and the room rearranges</span>
+          <span class="lyric-line emphasis">and I don't know which is which</span>
+
+          <span class="section-tag">Chorus</span>
+          <span class="lyric-line emphasis">Everybody remembers me differently</span>
+          <span class="lyric-line">one says I saved them</span>
+          <span class="lyric-line">one says I broke them</span>
+          <span class="lyric-line emphasis">everybody remembers me differently</span>
+          <span class="lyric-line emphasis">and I can't find the face that stayed</span>
+
+          <span class="section-tag">Verse 2</span>
+          <span class="lyric-line">There's a photo on the table</span>
+          <span class="lyric-line">but the year is wrong again</span>
+          <span class="lyric-line">my hand is on your shoulder</span>
+          <span class="lyric-line emphasis">then it's blood on the banister</span>
+          <span class="lyric-break"></span>
+          <span class="lyric-line">The hallway changes angles</span>
+          <span class="lyric-line">every time you say my name</span>
+          <span class="lyric-line">you swear I stood there smiling</span>
+          <span class="lyric-line emphasis">then you swear I was the flame</span>
+
+          <span class="section-tag">Bridge</span>
+          <span class="lyric-line">Maybe I split in the impact</span>
+          <span class="lyric-line">maybe the hour cracked in two</span>
+          <span class="lyric-line">maybe I'm only the overlap</span>
+          <span class="lyric-line emphasis">of every version you knew</span>
+          <span class="lyric-break"></span>
+          <span class="lyric-line">a version still in the hallway</span>
+          <span class="lyric-line">a version under the floor</span>
+          <span class="lyric-line">a version that died in your memory</span>
+          <span class="lyric-line emphasis">a version that came back for more</span>
+          <span class="lyric-break"></span>
+          <span class="lyric-line">if I'm all of them at once now</span>
+          <span class="lyric-line emphasis">then what am I supposed to do</span>
+          <span class="lyric-line">I keep reaching for one true body</span>
+          <span class="lyric-line emphasis">but I only find through</span>
+
+          <span class="section-tag">Final Chorus</span>
+          <span class="lyric-line emphasis">Everybody remembers me differently</span>
+          <span class="lyric-line">I was the rescue</span>
+          <span class="lyric-line">I was the wreckage</span>
+          <span class="lyric-line emphasis">everybody remembers me differently</span>
+          <span class="lyric-break"></span>
+          <span class="lyric-line">so let me fade into the version</span>
+          <span class="lyric-line emphasis">Dangerous. I saved you.</span>
+          <span class="lyric-line emphasis">Dead. Saved you.</span>
+        </div>
+        <div class="lyrics-aside">
+          <div class="lyrics-sc-embed">
+            <p class="lyrics-embed-label">Stream on SoundCloud</p>
+            <iframe width="100%" height="80" scrolling="no" frameborder="no" allow="autoplay; encrypted-media"
+              src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%3Atracks%3A2317609142&color=%23c8a97e&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false"
+              loading="lazy"></iframe>
+          </div>
+          <div class="lyrics-note"><p>"I can't find the face that stayed." A song about identity fracture — what happens when the people who knew you remember someone completely different. Who do you become when every account of you contradicts the others?</p></div>
+          <button class="back-to-top" onclick="scrollToSong('song-index')">↑ Back to index</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <a href="index.html" class="footer-logo">Darenstefan</a>
+        <div class="footer-socials">
+          <a href="https://open.spotify.com/album/4PxJ01q7ZyNlEis4kIHopG" target="_blank" rel="noopener">Spotify</a>
+          <a href="https://music.apple.com" target="_blank" rel="noopener">Apple Music</a>
+          <a href="https://www.youtube.com/@darenstefan" target="_blank" rel="noopener">YouTube</a>
+          <a href="https://www.instagram.com/darenstefanofficial" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.tiktok.com/@darenstefan1" target="_blank" rel="noopener">TikTok</a>
+        </div>
+      </div>
+      <p class="footer-copy">© 2026 Daren Stefan. All rights reserved. Lyrics are original works — all rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); });
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a => { a.addEventListener('click', () => navLinks.classList.remove('open')); });
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    reveals.forEach(el => observer.observe(el));
+    function scrollToSong(id) {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  </script>
+</body>
+</html>
