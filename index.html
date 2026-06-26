@@ -5,29 +5,670 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Daren Stefan | Cinematic Indie Music & The LAING Trilogy</title>
   <meta name="description" content="Daren Stefan is an independent artist based in Dubai creating cinematic indie music exploring digital intimacy, long-distance connection, and modern relationships through the LAING trilogy." />
-  <meta property="og:title" content="Daren Stefan | Cinematic Indie Music & The LAING Trilogy" />
-  <meta property="og:description" content="Daren Stefan is an independent artist based in Dubai creating cinematic indie music exploring digital intimacy, long-distance connection, and modern relationships through the LAING trilogy." />
+  <meta property="og:title" content="Daren Stefan" />
+  <meta property="og:description" content="Cinematic indie music exploring digital intimacy and the feelings people can't explain. Stream the LAING trilogy." />
   <meta property="og:type" content="website" />
   <meta name="google-site-verification" content="aW5IAlcEeJUzPsxG-bmJmzDIeSddxJydbpinBMnRbeU" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="canonical" href="https://darenstefan.com/" />
-  <meta property="og:url" content="https://darenstefan.com/" />
-  <meta property="og:image" content="https://darenstefan.com/assets/social-card.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Daren Stefan | Cinematic Indie Music & The LAING Trilogy" />
-  <meta name="twitter:description" content="Daren Stefan is an independent artist based in Dubai creating cinematic indie music exploring digital intimacy, long-distance connection, and modern relationships through the LAING trilogy." />
-  <meta name="twitter:image" content="https://darenstefan.com/assets/social-card.png" />
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="assets/style.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"MusicGroup","name":"Daren Stefan","alternateName":"Darenstefan","url":"https://darenstefan.com/","image":"https://darenstefan.com/assets/social-card.png","genre":["Cinematic Indie","AI-assisted music"],"sameAs":["https://open.spotify.com/album/4PxJ01q7ZyNlEis4kIHopG","https://music.apple.com/artist/1895715791","https://soundcloud.com/darenstefan","https://www.youtube.com/@darenstefan","https://www.instagram.com/darenstefanofficial","https://www.tiktok.com/@darenstefan1"],"workFeatured":{"@type":"MusicAlbum","name":"LAING - Act One","url":"https://open.spotify.com/album/4PxJ01q7ZyNlEis4kIHopG","byArtist":{"@type":"MusicGroup","name":"Daren Stefan"}}}</script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    :root {
+      --black:    #0a0a0c;
+      --surface:  #12121a;
+      --overlay:  #1c1c26;
+      --border:   rgba(200, 169, 126, 0.15);
+      --gold:     #c8a97e;
+      --gold-dim: rgba(200, 169, 126, 0.4);
+      --parchment:#f0e6d3;
+      --muted:    rgba(240, 230, 211, 0.45);
+      --dim:      rgba(240, 230, 211, 0.22);
+      --display:  'Cormorant Garamond', Georgia, serif;
+      --body:     'Inter', system-ui, sans-serif;
+    }
 
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--parchment);
+      font-family: var(--body);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 48px;
+      background: linear-gradient(to bottom, rgba(10,10,12,0.95) 0%, transparent 100%);
+      transition: background 0.4s;
+    }
+    nav.scrolled {
+      background: rgba(10,10,12,0.97);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: var(--display);
+      font-size: 1.1rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--parchment);
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--parchment);
+      transition: all 0.3s;
+    }
+
+    /* ── HERO ── */
+    #home {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 40%, rgba(44,32,48,0.6) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 40% at 20% 80%, rgba(200,169,126,0.06) 0%, transparent 60%),
+        #0a0a0c;
+    }
+    /* Subtle grain texture via SVG filter */
+    .hero-grain {
+      position: absolute;
+      inset: 0;
+      opacity: 0.035;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 256px 256px;
+    }
+    .hero-content {
+      position: relative;
+      text-align: center;
+      padding: 0 24px;
+    }
+    .hero-eyebrow {
+      font-family: var(--body);
+      font-size: 0.68rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0;
+      animation: fadeUp 1s ease 0.4s forwards;
+    }
+    .hero-title {
+      font-family: var(--display);
+      font-size: clamp(3.5rem, 10vw, 8rem);
+      font-weight: 300;
+      line-height: 1.0;
+      letter-spacing: 0.06em;
+      color: var(--parchment);
+      margin: 20px 0 0;
+      overflow: hidden;
+    }
+    .hero-title .word {
+      display: inline-block;
+      transform: translateY(110%);
+      opacity: 0;
+    }
+    .hero-title .word-1 { animation: slideUp 1.1s cubic-bezier(0.16,1,0.3,1) 0.6s forwards; }
+    .hero-title .word-2 { animation: slideUp 1.1s cubic-bezier(0.16,1,0.3,1) 0.85s forwards; }
+    .hero-sub {
+      font-family: var(--display);
+      font-style: italic;
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      font-weight: 300;
+      color: var(--muted);
+      margin-top: 24px;
+      opacity: 0;
+      animation: fadeUp 1s ease 1.4s forwards;
+    }
+    .hero-cta {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin-top: 44px;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 1s ease 1.8s forwards;
+    }
+    .btn-primary {
+      display: inline-block;
+      padding: 13px 32px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-family: var(--body);
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.25s, color 0.25s;
+    }
+    .btn-primary:hover {
+      background: var(--gold);
+      color: var(--black);
+    }
+    .btn-ghost {
+      display: inline-block;
+      padding: 13px 32px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-family: var(--body);
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: border-color 0.25s, color 0.25s;
+    }
+    .btn-ghost:hover {
+      border-color: var(--gold-dim);
+      color: var(--parchment);
+    }
+    .hero-scroll {
+      position: absolute;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      opacity: 0;
+      animation: fadeUp 1s ease 2.2s forwards;
+    }
+    .hero-scroll span {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--dim);
+    }
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--gold-dim), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    /* ── SECTION SHARED ── */
+    section { padding: 100px 0; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
+    .section-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-family: var(--display);
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 300;
+      line-height: 1.1;
+      color: var(--parchment);
+      margin-bottom: 48px;
+    }
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: var(--gold-dim);
+      margin-bottom: 48px;
+    }
+
+    /* ── MUSIC ── */
+    #music { background: var(--surface); }
+    .tracks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2px;
+    }
+    .track-embed {
+      background: var(--overlay);
+      padding: 20px;
+      border-left: 1px solid var(--border);
+      transition: border-color 0.2s;
+    }
+    .track-embed:hover { border-color: var(--gold-dim); }
+    .track-embed iframe {
+      display: block;
+      width: 100%;
+      border: none;
+    }
+    .track-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--dim);
+      margin-bottom: 12px;
+    }
+    .album-link {
+      display: inline-block;
+      margin-top: 40px;
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+      border-bottom: 1px solid var(--gold-dim);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .album-link:hover { color: var(--parchment); border-color: var(--parchment); }
+
+    /* ── VIDEOS ── */
+    #videos { background: var(--black); }
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2px;
+    }
+    .video-item {
+      position: relative;
+      background: var(--overlay);
+      border-left: 1px solid var(--border);
+      transition: border-color 0.2s;
+    }
+    .video-item:hover { border-color: var(--gold-dim); }
+    .video-item iframe {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16/9;
+      border: none;
+    }
+    .video-caption {
+      padding: 16px 20px;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+    }
+
+    /* ── ABOUT ── */
+    #about { background: var(--surface); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .about-text p {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.9;
+      margin-bottom: 20px;
+    }
+    .about-text p em {
+      font-family: var(--display);
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--parchment);
+    }
+    .about-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      padding-top: 8px;
+    }
+    .stat-item {
+      border-left: 1px solid var(--border);
+      padding-left: 24px;
+    }
+    .stat-number {
+      font-family: var(--display);
+      font-size: 2.4rem;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--dim);
+      margin-top: 4px;
+    }
+    .platforms {
+      margin-top: 40px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .platform-link {
+      display: inline-block;
+      padding: 9px 20px;
+      border: 1px solid var(--border);
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .platform-link:hover { border-color: var(--gold-dim); color: var(--gold); }
+
+    /* ── EPK ── */
+    #epk { background: var(--black); }
+    .epk-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .epk-bio {
+      font-family: var(--display);
+      font-size: 1.25rem;
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--muted);
+      border-left: 1px solid var(--gold-dim);
+      padding-left: 28px;
+      margin-bottom: 40px;
+    }
+    .epk-facts {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .epk-fact {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.78rem;
+    }
+    .epk-fact-key {
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--dim);
+      font-size: 0.65rem;
+    }
+    .epk-fact-val { color: var(--parchment); }
+    .epk-download {
+      display: inline-block;
+      margin-top: 32px;
+      padding: 13px 28px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.25s, color 0.25s;
+    }
+    .epk-download:hover { background: var(--gold); color: var(--black); }
+
+    /* ── EMAIL ── */
+    #email { background: var(--overlay); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .email-inner {
+      max-width: 580px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .email-inner .section-title { margin-bottom: 16px; }
+    .email-inner p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 36px;
+    }
+    .email-form {
+      display: flex;
+      gap: 0;
+    }
+    .email-form input {
+      flex: 1;
+      padding: 14px 20px;
+      background: rgba(10,10,12,0.8);
+      border: 1px solid var(--border);
+      border-right: none;
+      color: var(--parchment);
+      font-family: var(--body);
+      font-size: 0.85rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .email-form input::placeholder { color: var(--dim); }
+    .email-form input:focus { border-color: var(--gold-dim); }
+    .email-form button {
+      padding: 14px 28px;
+      background: var(--gold);
+      border: 1px solid var(--gold);
+      color: var(--black);
+      font-family: var(--body);
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: opacity 0.2s;
+      white-space: nowrap;
+    }
+    .email-form button:hover { opacity: 0.85; }
+    .email-note {
+      margin-top: 14px;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      color: var(--dim);
+    }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--surface); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+    }
+    .contact-info h3 {
+      font-family: var(--display);
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: var(--parchment);
+      margin-bottom: 20px;
+    }
+    .contact-info p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 32px;
+    }
+    .contact-detail {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .contact-detail a {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .contact-detail a:hover { opacity: 0.7; }
+    .contact-form { display: flex; flex-direction: column; gap: 16px; }
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .form-field label {
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--dim);
+    }
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      padding: 12px 16px;
+      background: var(--overlay);
+      border: 1px solid var(--border);
+      color: var(--parchment);
+      font-family: var(--body);
+      font-size: 0.85rem;
+      outline: none;
+      resize: none;
+      transition: border-color 0.2s;
+      appearance: none;
+    }
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus { border-color: var(--gold-dim); }
+    .form-field select { cursor: pointer; }
+    .form-field select option { background: var(--surface); }
+    .form-submit {
+      padding: 14px 32px;
+      background: none;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-family: var(--body);
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      cursor: pointer;
+      align-self: flex-start;
+      transition: background 0.25s, color 0.25s;
+    }
+    .form-submit:hover { background: var(--gold); color: var(--black); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--black);
+      border-top: 1px solid var(--border);
+      padding: 48px 0;
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .footer-logo {
+      font-family: var(--display);
+      font-size: 1rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--parchment);
+      text-decoration: none;
+    }
+    .footer-socials {
+      display: flex;
+      gap: 24px;
+    }
+    .footer-socials a {
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--dim);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-socials a:hover { color: var(--gold); }
+    .footer-copy {
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      color: var(--dim);
+      width: 100%;
+      text-align: center;
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideUp {
+      from { transform: translateY(110%); opacity: 0; }
+      to   { transform: translateY(0);    opacity: 1; }
+    }
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.3; transform: scaleY(1); }
+      50%       { opacity: 0.8; transform: scaleY(1.1); }
+    }
+
+    /* Scroll-reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        inset: 0;
+        background: rgba(10,10,12,0.98);
+        align-items: center;
+        justify-content: center;
+        gap: 32px;
+        z-index: 99;
+      }
+      .nav-links.open a { font-size: 1.2rem; }
+      .nav-hamburger { display: flex; z-index: 101; position: relative; }
+      .container { padding: 0 24px; }
+      section { padding: 70px 0; }
+      .about-grid, .epk-grid, .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+      .email-form { flex-direction: column; }
+      .email-form input { border-right: 1px solid var(--border); border-bottom: none; }
+      .tracks-grid, .videos-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
 </head>
-<body class="home-page">
+<body>
 
   <!-- NAV -->
   <nav id="nav">
@@ -38,11 +679,11 @@
       <li><a href="index.html#music">Music</a></li>
       <li><a href="index.html#videos">Videos</a></li>
       <li><a href="index.html#about">About</a></li>
-      <li><a href="press.html">Press</a></li>
       <li><a href="lyrics.html">Lyrics</a></li>
+      <li><a href="press.html">Press</a></li>
       <li><a href="index.html#contact">Contact</a></li>
     </ul>
-    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" type="button">
+    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>
   </nav>
@@ -161,15 +802,15 @@
       <h2 class="section-title reveal">On Screen</h2>
       <div class="videos-grid reveal">
         <div class="video-item">
-          <iframe src="https://www.youtube.com/embed/IX0INZFeCgQ" title="Typing… — Daren Stefan" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          <iframe src="https://www.youtube.com/embed/IX0INZFeCgQ" title="Typing… — Darenstefan" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
           <p class="video-caption">Typing… — Official Video</p>
         </div>
         <div class="video-item">
-          <iframe src="https://www.youtube.com/embed/rQIUUNoyTiQ" title="Your Morning Is My Insomnia — Daren Stefan" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          <iframe src="https://www.youtube.com/embed/rQIUUNoyTiQ" title="Your Morning Is My Insomnia — Darenstefan" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
           <p class="video-caption">Your Morning Is My Insomnia</p>
         </div>
         <div class="video-item">
-          <iframe src="https://www.youtube.com/embed/4647CcVDoPQ" title="The Untold Perspective — Daren Stefan" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          <iframe src="https://www.youtube.com/embed/4647CcVDoPQ" title="The Untold Perspective — Darenstefan" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
           <p class="video-caption">The Untold Perspective</p>
         </div>
       </div>
@@ -191,7 +832,7 @@
           <p>Based in Dubai. Writing with instinct, producing with AI, releasing with intention.</p>
           <div class="platforms">
             <a href="https://open.spotify.com/album/4PxJ01q7ZyNlEis4kIHopG" target="_blank" rel="noopener" class="platform-link">Spotify</a>
-            <a href="https://music.apple.com/artist/1895715791" target="_blank" rel="noopener" class="platform-link">Apple Music</a>
+            <a href="https://music.apple.com" target="_blank" rel="noopener" class="platform-link">Apple Music</a>
             <a href="https://www.youtube.com/@darenstefan" target="_blank" rel="noopener" class="platform-link">YouTube</a>
             <a href="https://www.instagram.com/darenstefanofficial" target="_blank" rel="noopener" class="platform-link">Instagram</a>
             <a href="https://www.tiktok.com/@darenstefan1" target="_blank" rel="noopener" class="platform-link">TikTok</a>
@@ -226,7 +867,7 @@
       <h2 class="section-title reveal">For Media & Booking</h2>
       <div class="epk-grid">
         <div class="reveal">
-          <p class="epk-bio">Daren Stefan is an independent musician and content creator based in Dubai, releasing AI-assisted cinematic and indie music that explores the emotional textures of digital connection, long-distance intimacy, and the feelings people carry but can't quite name.</p>
+          <p class="epk-bio">Darenstefan is an independent musician and content creator based in Dubai, releasing AI-assisted cinematic and indie music that explores the emotional textures of digital connection, long-distance intimacy, and the feelings people carry but can't quite name.</p>
           <p style="font-size:0.85rem;color:var(--muted);line-height:1.9;">His debut project, <em style="font-family:var(--display);color:var(--parchment);">LAING (Act One)</em>, is available on all major streaming platforms. Upcoming releases include new singles, a lofi compilation channel, and Acts Two and Three of the LAING trilogy.</p>
           <a href="#contact" class="epk-download" style="display:inline-block;margin-top:32px;">Request Press Kit</a>
         </div>
@@ -266,6 +907,28 @@
     </div>
   </section>
 
+  <!-- EMAIL SIGNUP -->
+  <section id="email">
+    <div class="container">
+      <div class="email-inner">
+        <p class="section-label">Inner Circle</p>
+        <h2 class="section-title">Stay in the loop</h2>
+        <p>New releases, behind-the-scenes, and things that don't make it to the algorithm. No spam — just signal.</p>
+        <!-- Mailchimp Signup Form -->
+        <form action="https://darenstefan.us17.list-manage.com/subscribe/post?u=d8931b516f264cb413a058608&amp;id=bea913a8ac&amp;f_id=00f757e0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+          <div class="email-form">
+            <input type="email" name="EMAIL" id="mce-EMAIL" placeholder="your@email.com" aria-label="Email address" required />
+            <!-- bot protection — do not remove -->
+            <div aria-hidden="true" style="position:absolute;left:-5000px;">
+              <input type="text" name="b_d8931b516f264cb413a058608_bea913a8ac" tabindex="-1" value="">
+            </div>
+            <button type="submit" name="subscribe" id="mc-embedded-subscribe">Subscribe</button>
+          </div>
+        </form>
+        <p class="email-note">No spam. Unsubscribe any time.</p>
+      </div>
+    </div>
+  </section>
 
   <!-- CONTACT -->
   <section id="contact">
@@ -308,7 +971,7 @@
             <label for="c-message">Message</label>
             <textarea id="c-message" rows="5" placeholder="What's on your mind?"></textarea>
           </div>
-          <button type="button" class="form-submit" data-contact-submit>Send Message</button>
+          <button type="button" class="form-submit" onclick="handleContactSubmit()">Send Message</button>
         </div>
       </div>
     </div>
@@ -321,15 +984,100 @@
         <a href="#home" class="footer-logo">Darenstefan</a>
         <div class="footer-socials">
           <a href="https://open.spotify.com/album/4PxJ01q7ZyNlEis4kIHopG" target="_blank" rel="noopener">Spotify</a>
-          <a href="https://music.apple.com/artist/1895715791" target="_blank" rel="noopener">Apple Music</a>
+          <a href="https://music.apple.com" target="_blank" rel="noopener">Apple Music</a>
           <a href="https://www.youtube.com/@darenstefan" target="_blank" rel="noopener">YouTube</a>
           <a href="https://www.instagram.com/darenstefanofficial" target="_blank" rel="noopener">Instagram</a>
           <a href="https://www.tiktok.com/@darenstefan1" target="_blank" rel="noopener">TikTok</a>
         </div>
       </div>
-      <p class="footer-copy">© 2026 Daren Stefan. All rights reserved. Music distributed via DistroKid.</p>
+      <p class="footer-copy">© 2026 Darenstefan. All rights reserved. Music distributed via DistroKid.</p>
     </div>
   </footer>
-  <script src="assets/script.js" defer></script>
+
+  <script>
+    // Nav scroll state
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Email signup handler
+    function handleEmailSubmit() {
+      const input = document.getElementById('email-input');
+      const val = input.value.trim();
+      if (!val || !val.includes('@')) {
+        input.style.borderColor = 'rgba(200,100,80,0.6)';
+        return;
+      }
+      // Connect to Mailchimp / Kit embed here
+      // For now: visual confirmation
+      input.value = '';
+      input.placeholder = 'You\'re in. Thank you.';
+      input.style.borderColor = 'rgba(200,169,126,0.5)';
+    }
+
+    // Contact form handler
+    async function handleContactSubmit() {
+      const name    = document.getElementById('c-name').value.trim();
+      const email   = document.getElementById('c-email').value.trim();
+      const subject = document.getElementById('c-subject').value;
+      const message = document.getElementById('c-message').value.trim();
+      const btn     = document.querySelector('.form-submit');
+
+      if (!name || !email || !message) {
+        btn.textContent = 'Please fill in all fields.';
+        setTimeout(() => btn.textContent = 'Send Message', 2000);
+        return;
+      }
+
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+
+      try {
+        const res = await fetch('https://formspree.io/f/xpqgagly', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({ name, email, subject, message })
+        });
+
+        if (res.ok) {
+          btn.textContent = 'Sent — thank you.';
+          btn.style.borderColor = 'var(--gold-dim)';
+          document.getElementById('c-name').value    = '';
+          document.getElementById('c-email').value   = '';
+          document.getElementById('c-subject').value = '';
+          document.getElementById('c-message').value = '';
+        } else {
+          btn.textContent = 'Something went wrong — try again.';
+          btn.disabled = false;
+        }
+      } catch {
+        btn.textContent = 'Network error — try again.';
+        btn.disabled = false;
+      }
+    }
+  </script>
 </body>
 </html>
