@@ -8,11 +8,8 @@
   <meta property="og:title" content="Daren Stefan" />
   <meta property="og:description" content="Cinematic indie music exploring digital intimacy and the feelings people can't explain. Stream the LAING trilogy." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://darenstefan.com/assets/social-card.png" />
-  <meta property="og:url" content="https://darenstefan.com" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <link rel="canonical" href="https://darenstefan.com" />
   <meta name="google-site-verification" content="aW5IAlcEeJUzPsxG-bmJmzDIeSddxJydbpinBMnRbeU" />
+  <link rel="canonical" href="https://darenstefan.com/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -680,12 +677,12 @@
     <ul class="nav-links" id="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="laing.html">LAING</a></li>
-      <li><a href="index.html#music">Music</a></li>
-      <li><a href="index.html#videos">Videos</a></li>
-      <li><a href="index.html#about">About</a></li>
+      <li><a href="#music">Music</a></li>
+      <li><a href="#videos">Videos</a></li>
+      <li><a href="#about">About</a></li>
       <li><a href="lyrics.html">Lyrics</a></li>
       <li><a href="press.html">Press</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
     <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
       <span></span><span></span><span></span>
@@ -697,7 +694,7 @@
     <div class="hero-bg"></div>
     <div class="hero-grain"></div>
     <div class="hero-content">
-      <p class="hero-eyebrow">Dubai · Cinematic Indie </p>
+      <p class="hero-eyebrow">Dubai · Cinematic Indie · AI-Assisted</p>
       <h1 class="hero-title">
         <span class="word word-1">Daren</span>&nbsp;<span class="word word-2">Stefan</span>
       </h1>
@@ -918,17 +915,10 @@
         <p class="section-label">Inner Circle</p>
         <h2 class="section-title">Stay in the loop</h2>
         <p>New releases, behind-the-scenes, and things that don't make it to the algorithm. No spam — just signal.</p>
-        <!-- Mailchimp Signup Form -->
-        <form action="https://darenstefan.us17.list-manage.com/subscribe/post?u=d8931b516f264cb413a058608&amp;id=bea913a8ac&amp;f_id=00f757e0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
-          <div class="email-form">
-            <input type="email" name="EMAIL" id="mce-EMAIL" placeholder="your@email.com" aria-label="Email address" required />
-            <!-- bot protection — do not remove -->
-            <div aria-hidden="true" style="position:absolute;left:-5000px;">
-              <input type="text" name="b_d8931b516f264cb413a058608_bea913a8ac" tabindex="-1" value="">
-            </div>
-            <button type="submit" name="subscribe" id="mc-embedded-subscribe">Subscribe</button>
-          </div>
-        </form>
+        <div class="email-form">
+          <input type="email" id="email-input" placeholder="your@email.com" aria-label="Email address" />
+          <button type="button" onclick="handleEmailSubmit()">Subscribe</button>
+        </div>
         <p class="email-note">No spam. Unsubscribe any time.</p>
       </div>
     </div>
