@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LAING — The Trilogy | Daren Stefan</title>
+  <title>LAING — The Trilogy | DARENSTEFAN</title>
   <meta name="description" content="LAING is a 15-song cinematic indie trilogy about digital intimacy, long-distance love, and the feelings that live between screens. Three acts. One conversation that never really ended." />
   <meta property="og:title" content="LAING — Three Acts. Fifteen Songs. One Conversation." />
   <meta property="og:description" content="A cinematic trilogy about the distance between two people and everything that fills it." />
@@ -174,25 +174,10 @@
       *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
     }
   </style>
-</head>
-<body>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/design-system.css"><meta name="theme-color" content="#11151d"><meta property="og:image" content="https://darenstefan.com/assets/hero-banner.webp"></head>
+<body><a class="ds-skip" href="#laing-hero">Skip to content</a>
 
-  <nav id="nav">
-    <a href="index.html" class="nav-logo">Darenstefan</a>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="laing.html" class="active">LAING</a></li>
-      <li><a href="index.html#music">Music</a></li>
-      <li><a href="index.html#videos">Videos</a></li>
-      <li><a href="index.html#about">About</a></li>
-      <li><a href="lyrics.html">Lyrics</a></li>
-      <li><a href="press.html">Press</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
-    </ul>
-    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
+  <nav id="nav" aria-label="Main navigation"><a href="index.html" class="nav-logo">DARENSTEFAN</a><ul class="nav-links" id="nav-links"><li><a href="index.html">Home</a></li><li><a href="index.html#music">Music</a></li><li><a href="laing.html" class="active" aria-current="page">LAING</a></li><li><a href="lyrics.html">Lyrics</a></li><li><a href="press.html">Press</a></li><li><a href="index.html#artist">The Artist</a></li><li><a href="index.html#visuals">Visuals</a></li><li><a href="index.html#connect">Connect</a></li></ul><button class="nav-hamburger" id="hamburger" aria-label="Toggle navigation" aria-controls="nav-links" aria-expanded="false"><span></span><span></span><span></span></button></nav>
 
   <section id="laing-hero">
     <div class="hero-bg"></div>
@@ -380,7 +365,7 @@
         </div>
         <div class="shoutout-row">
           <input type="checkbox" id="s-shoutout" />
-          <label for="s-shoutout"><strong>I'd love a mention in Act Two or Act Three.</strong> Daren Stefan may reference my story (anonymously or by first name) in future LAING releases, blog posts, or liner notes. I understand this is not guaranteed but is a real possibility.</label>
+          <label for="s-shoutout"><strong>I'd love a mention in Act Two or Act Three.</strong> DARENSTEFAN may reference my story (anonymously or by first name) in future LAING releases, blog posts, or liner notes. I understand this is not guaranteed but is a real possibility.</label>
         </div>
         <div class="form-bottom">
           <p class="form-note">Stories are displayed publicly below. Your email is never shown publicly and is only used to contact you about a potential shoutout.</p>
@@ -399,21 +384,7 @@
     </div>
   </section>
 
-  <footer>
-    <div class="container">
-      <div class="footer-inner">
-        <a href="index.html" class="footer-logo">Darenstefan</a>
-        <div class="footer-socials">
-          <a href="https://open.spotify.com/album/4PxJ01q7ZyNlEis4kIHopG" target="_blank" rel="noopener">Spotify</a>
-          <a href="https://music.apple.com" target="_blank" rel="noopener">Apple Music</a>
-          <a href="https://www.youtube.com/@darenstefan" target="_blank" rel="noopener">YouTube</a>
-          <a href="https://www.instagram.com/darenstefanofficial" target="_blank" rel="noopener">Instagram</a>
-          <a href="https://www.tiktok.com/@darenstefan1" target="_blank" rel="noopener">TikTok</a>
-        </div>
-      </div>
-      <p class="footer-copy">© 2026 Daren Stefan. All rights reserved. Music distributed via DistroKid.</p>
-    </div>
-  </footer>
+  <footer><div class="container"><div class="footer-inner"><a href="index.html" class="footer-logo">DARENSTEFAN</a><div class="footer-socials"><a href="https://open.spotify.com/album/4PxJ01q7ZyNlEis4kIHopG" target="_blank" rel="noopener noreferrer">Spotify</a><a href="https://soundcloud.com/darenstefan" target="_blank" rel="noopener noreferrer">SoundCloud</a><a href="https://youtube.com/@darenstefan1" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://www.instagram.com/darenstefanofficial/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://www.tiktok.com/@darenstefan1" target="_blank" rel="noopener noreferrer">TikTok</a><a href="https://www.facebook.com/darenstefanofficial" target="_blank" rel="noopener noreferrer">Facebook</a></div></div><p class="footer-copy">© <span class="ds-year">2026</span> DARENSTEFAN · THE VOICE BETWEEN MOMENTS · Fictional AI music artist · <a href="privacy_1.html">Privacy</a> · <a href="mailto:hello@darenstefan.com">Contact</a></p></div></footer>
 
   <script>
     const nav = document.getElementById('nav');
@@ -492,5 +463,5 @@
 
     renderWall();
   </script>
-</body>
+<script>document.querySelectorAll('.ds-year').forEach(el=>el.textContent=new Date().getFullYear());const dsMenu=document.getElementById('hamburger');if(dsMenu){dsMenu.addEventListener('click',()=>{dsMenu.setAttribute('aria-expanded',String(document.getElementById('nav-links').classList.contains('open')))});}</script></body>
 </html>
