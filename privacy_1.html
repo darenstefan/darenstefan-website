@@ -102,8 +102,8 @@
   .contact-box p { margin: 0 0 6px; }
   .contact-box p:last-child { margin-bottom: 0; }
 </style>
-</head>
-<body>
+<link rel="stylesheet" href="assets/shared-nav.css"></head>
+<body><header class="ds-site-header"><nav class="ds-site-nav nav" aria-label="Main navigation"><a class="ds-brand brand" href="index.html"><span>DS</span>DARENSTEFAN</a><button class="ds-menu ds-toggle" type="button" aria-label="Toggle navigation" aria-controls="ds-navigation" aria-expanded="false">Menu</button><div class="ds-links links" id="ds-navigation"><a href="index.html">Home</a><a href="music.html">Music</a><a href="store.html">Store</a><a href="lyrics.html">Lyrics</a><a href="index.html#artist">The Artist</a><a href="index.html#visuals">Visuals</a><a href="press.html">Press</a><a href="index.html#connect">Connect</a></div></nav></header>
 <div class="wrap">
 
   <a class="back" href="https://darenstefan.com">&larr; Back to darenstefan.com</a>
@@ -169,5 +169,5 @@
   <a class="back" href="https://darenstefan.com">&larr; Back to darenstefan.com</a>
 
 </div>
-</body>
+<script>(function(){const b=document.querySelector('.ds-menu'),n=document.querySelector('.ds-links');if(!b||!n)return;b.addEventListener('click',()=>{const open=n.classList.toggle('open');b.setAttribute('aria-expanded',String(open))});n.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{n.classList.remove('open');b.setAttribute('aria-expanded','false')}))})();</script></body>
 </html>
