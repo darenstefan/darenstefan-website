@@ -283,7 +283,14 @@
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
     }
-  </style>
+  
+/* DARENSTEFAN lyric-book preview redesign */
+:root{--black:#10151d;--surface:#151e29;--overlay:#202c3b;--border:rgba(171,192,218,.16);--gold:#a8c1dc;--gold-dim:rgba(168,193,220,.5);--parchment:#f5f2ed;--muted:#b4c0cf;--dim:#889aad;--display:'Inter',system-ui,sans-serif}
+#lyrics-hero{min-height:55vh;padding-top:150px;padding-bottom:65px}.hero-bg{background:radial-gradient(ellipse 65% 80% at 78% 30%,rgba(62,94,130,.42),transparent 75%),linear-gradient(135deg,#182538,#10151d)}.hero-title{font-weight:750;letter-spacing:-.065em;line-height:1.05}.hero-sub{font-family:var(--body);font-style:normal;font-size:1rem}.hero-eyebrow{font-weight:650}
+#song-index{padding:72px 0 95px}.ds-library-heading{display:flex;align-items:end;justify-content:space-between;gap:28px;margin-bottom:30px}.ds-library-heading h2{font-size:clamp(28px,3.7vw,46px);letter-spacing:-.05em;line-height:1.15}.ds-library-heading p:not(.index-label){color:var(--muted);margin-top:10px}.index-label{margin-bottom:12px}.ds-search-label{display:flex;flex-direction:column;gap:6px;color:var(--muted);font-size:12px;min-width:230px}.ds-search-label input{width:100%;border:1px solid var(--border);border-radius:13px;background:#263448;color:#fff;padding:14px 16px;font:inherit;font-size:14px;outline:none}.ds-search-label input:focus{border-color:#9ebada}.ds-lyric-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:19px}.ds-lyric-card{min-width:0;text-decoration:none;background:#1b2736;border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:transform .22s,border-color .22s,box-shadow .22s}.ds-lyric-card:hover,.ds-lyric-card:focus-visible{transform:translateY(-4px);border-color:#8eaccd;box-shadow:0 16px 35px rgba(0,0,0,.25)}.ds-lyric-card img{display:block;width:100%;aspect-ratio:1;object-fit:cover;background:#273447}.ds-card-details{display:flex;flex-direction:column;padding:17px;gap:7px}.ds-card-details strong{color:#f5f2ed;font-size:15px;line-height:1.35}.ds-card-details small{color:var(--muted);font-size:12px}.ds-read{color:#bcd3ec;font-size:12px;margin-top:8px}.ds-no-results{color:var(--muted);padding:22px 0}
+.lyrics-section{scroll-margin-top:85px;padding:85px 0;background:linear-gradient(115deg,#141e2b,#10151d)!important}.lyrics-section:nth-child(even){background:linear-gradient(115deg,#1c2938,#111923)!important}.lyrics-header{align-items:center;margin-bottom:32px}.lyrics-num{font:700 12px var(--body);letter-spacing:.16em;opacity:1;color:#a8c1dc;background:#283b50;border-radius:100px;padding:10px 14px}.lyrics-title{font-size:clamp(34px,5vw,62px);font-weight:750;letter-spacing:-.06em}.lyrics-body{grid-template-columns:minmax(0,1.2fr) minmax(250px,.8fr);gap:clamp(28px,5vw,85px)}.lyrics-text{font-family:var(--body);font-size:clamp(17px,1.8vw,23px);line-height:1.9;color:#e6eaf0;font-weight:450}.lyrics-text .lyric-line{color:#d7e0ea}.lyrics-text .lyric-line.emphasis{color:#fff;font-style:normal;font-weight:650}.lyrics-text .section-tag{font-size:11px;font-weight:700;color:#9db8d5;margin-top:38px;margin-bottom:14px}.lyrics-note{border-left:0;border-radius:15px;padding:24px}.lyrics-note p{font-family:var(--body);font-style:normal;font-size:14px}.genius-link{border-radius:30px;letter-spacing:0;text-transform:none}.back-to-top{border:1px solid var(--border);border-radius:25px;padding:12px 17px;letter-spacing:0;text-transform:none}.lyrics-section#typing .lyrics-text{border-radius:22px;padding:clamp(24px,4vw,48px);background:linear-gradient(140deg,rgba(67,95,131,.3),rgba(24,35,49,.4));border:1px solid var(--border)}
+@media(max-width:950px){.ds-lyric-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:768px){.ds-library-heading{align-items:stretch;flex-direction:column}.ds-lyric-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.ds-card-details{padding:12px}.lyrics-body{grid-template-columns:1fr}.lyrics-aside{position:static}.lyrics-section{padding:55px 0}}@media(max-width:420px){.ds-card-details strong{font-size:13px}.ds-card-details small{font-size:11px}}@media(prefers-reduced-motion:reduce){.ds-lyric-card{transition:none}}
+</style>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/design-system.css"><meta name="theme-color" content="#11151d"><meta property="og:image" content="https://darenstefan.com/assets/hero-banner.webp"><link rel="stylesheet" href="assets/shared-nav.css"></head>
 <body><a class="ds-skip" href="#lyrics-hero">Skip to content</a>
 
@@ -295,77 +302,13 @@
     <div class="hero-grain"></div>
     <div class="hero-content">
       <p class="hero-eyebrow">Official Lyrics · DARENSTEFAN</p>
-      <h1 class="hero-title">Every Word,<br>Intentional.</h1>
-      <p class="hero-sub">Seven songs. All the feelings in between.</p>
+      <h1 class="hero-title">Every song has<br>a story.</h1>
+      <p class="hero-sub">A place for the words that stay with you.</p>
     </div>
   </section>
 
-  <!-- SONG INDEX -->
-  <section id="song-index">
-    <div class="container">
-      <p class="index-label reveal">Song Index</p>
-
-      <div class="index-group reveal">
-        <p class="index-group-title">LAING — Act One · Digital Intimacy</p>
-        <div class="index-list">
-          <div class="index-item" onclick="scrollToSong('typing')">
-            <span class="index-num">01</span>
-            <span class="index-name">Typing…</span>
-            <span class="index-tag">LAING · Act I</span>
-            <span class="index-arrow">→</span>
-          </div>
-          <div class="index-item" onclick="scrollToSong('insomnia')">
-            <span class="index-num">02</span>
-            <span class="index-name">Your Morning Is My Insomnia</span>
-            <span class="index-tag">LAING · Act I</span>
-            <span class="index-arrow">→</span>
-          </div>
-          <div class="index-item" onclick="scrollToSong('strange')">
-            <span class="index-num">03</span>
-            <span class="index-name">Stay Strange</span>
-            <span class="index-tag">LAING · Act I</span>
-            <span class="index-arrow">→</span>
-          </div>
-          <div class="index-item" onclick="scrollToSong('translation')">
-            <span class="index-num">04</span>
-            <span class="index-name">Love in Translation</span>
-            <span class="index-tag">LAING · Act I</span>
-            <span class="index-arrow">→</span>
-          </div>
-          <div class="index-item" onclick="scrollToSong('heaven')">
-            <span class="index-num">05</span>
-            <span class="index-name">Temporary Heaven</span>
-            <span class="index-tag">LAING · Act I</span>
-            <span class="index-arrow">→</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="index-group reveal">
-        <p class="index-group-title">Singles</p>
-        <div class="index-list">
-          <div class="index-item" onclick="scrollToSong('wildflower')">
-            <span class="index-num">S1</span>
-            <span class="index-name">Wildflower (His Reply)</span>
-            <span class="index-tag">Single · 2026</span>
-            <span class="index-arrow">→</span>
-          </div>
-          <div class="index-item" onclick="scrollToSong('glass')">
-            <span class="index-num">S2</span>
-            <span class="index-name">Me in the Glass</span>
-            <span class="index-tag">Single · SoundCloud</span>
-            <span class="index-arrow">→</span>
-          </div>
-          <div class="index-item" onclick="scrollToSong('everybody')">
-            <span class="index-num">S3</span>
-            <span class="index-name">Everybody Remembers Me Differently</span>
-            <span class="index-tag">Single · SoundCloud</span>
-            <span class="index-arrow">→</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- IMMERSIVE SONG LIBRARY -->
+  <section id="song-index"><div class="container"><div class="ds-library-heading"><div><p class="index-label">THE LYRIC LIBRARY</p><h2>Find the words behind the music.</h2><p>Choose a song and step inside its story.</p></div><label class="ds-search-label"><span>Search lyrics</span><input id="ds-lyric-search" type="search" placeholder="Search song titles…" autocomplete="off"></label></div><div class="ds-lyric-grid"><a class="ds-lyric-card" href="#typing" data-song="typing…" aria-label="Read lyrics for Typing…"><img src="assets/store/covers/laing.jpg" alt="" loading="lazy"><span class="ds-card-details"><strong>Typing…</strong><small>LAING · Act One</small><span class="ds-read">Read lyrics ↗</span></span></a><a class="ds-lyric-card" href="#insomnia" data-song="your morning is my insomnia" aria-label="Read lyrics for Your Morning Is My Insomnia"><img src="assets/store/covers/laing.jpg" alt="" loading="lazy"><span class="ds-card-details"><strong>Your Morning Is My Insomnia</strong><small>LAING · Act One</small><span class="ds-read">Read lyrics ↗</span></span></a><a class="ds-lyric-card" href="#strange" data-song="stay strange" aria-label="Read lyrics for Stay Strange"><img src="assets/store/covers/laing.jpg" alt="" loading="lazy"><span class="ds-card-details"><strong>Stay Strange</strong><small>LAING · Act One</small><span class="ds-read">Read lyrics ↗</span></span></a><a class="ds-lyric-card" href="#translation" data-song="love in translation" aria-label="Read lyrics for Love in Translation"><img src="assets/store/covers/laing.jpg" alt="" loading="lazy"><span class="ds-card-details"><strong>Love in Translation</strong><small>LAING · Act One</small><span class="ds-read">Read lyrics ↗</span></span></a><a class="ds-lyric-card" href="#heaven" data-song="temporary heaven" aria-label="Read lyrics for Temporary Heaven"><img src="assets/store/covers/laing.jpg" alt="" loading="lazy"><span class="ds-card-details"><strong>Temporary Heaven</strong><small>LAING · Act One</small><span class="ds-read">Read lyrics ↗</span></span></a><a class="ds-lyric-card" href="#wildflower" data-song="wildflower (his reply)" aria-label="Read lyrics for Wildflower (His Reply)"><img src="assets/store/covers/wildflower-his-reply.jpg" alt="" loading="lazy"><span class="ds-card-details"><strong>Wildflower (His Reply)</strong><small>Single</small><span class="ds-read">Read lyrics ↗</span></span></a><a class="ds-lyric-card" href="#glass" data-song="me in the glass" aria-label="Read lyrics for Me in the Glass"><img src="assets/store/covers/me-in-the-glass.jpg" alt="" loading="lazy"><span class="ds-card-details"><strong>Me in the Glass</strong><small>Single</small><span class="ds-read">Read lyrics ↗</span></span></a><a class="ds-lyric-card" href="#everybody" data-song="everybody remembers me differently" aria-label="Read lyrics for Everybody Remembers Me Differently"><img src="assets/store/covers/everybody-remembers-me-differently.jpg" alt="" loading="lazy"><span class="ds-card-details"><strong>Everybody Remembers Me Differently</strong><small>Single</small><span class="ds-read">Read lyrics ↗</span></span></a></div><p class="ds-no-results" hidden>No songs match your search.</p></div></section>
 
   <!-- TRACK 01: TYPING -->
   <section class="lyrics-section" id="typing">
@@ -1104,6 +1047,8 @@
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
     }, { threshold: 0.08 });
     reveals.forEach(el => observer.observe(el));
+    const lyricSearch=document.getElementById('ds-lyric-search');
+    if(lyricSearch){lyricSearch.addEventListener('input',()=>{const q=lyricSearch.value.trim().toLowerCase();let shown=0;document.querySelectorAll('.ds-lyric-card').forEach(card=>{const match=card.dataset.song.includes(q);card.hidden=!match;if(match)shown++});document.querySelector('.ds-no-results').hidden=shown!==0;});}
     function scrollToSong(id) {
       const el = document.getElementById(id);
       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
