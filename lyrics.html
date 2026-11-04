@@ -307,6 +307,9 @@
 /* Stay Strange: isolated custom-player experiment, preview only */
 .ds-custom-player{padding:15px;border-radius:17px;background:linear-gradient(135deg,#2b415b,#192536);border:1px solid rgba(168,193,220,.3);margin-bottom:20px;box-shadow:0 12px 30px rgba(0,0,0,.18)}.ds-player-top{display:flex;align-items:center;gap:12px;margin-bottom:14px}.ds-player-top img{width:48px;height:48px;border-radius:8px;object-fit:cover}.ds-player-top div{display:flex;flex-direction:column;gap:3px}.ds-player-top strong{font-size:15px;color:#fff}.ds-player-top span{font-size:12px;color:#bacce0}.ds-custom-player audio{width:100%;display:block;min-height:42px}.ds-player-status{font-size:11px;color:#c3d1df;line-height:1.5;margin-top:10px}
 @media(max-width:768px){#strange .ds-custom-player{order:1;position:sticky;top:76px;z-index:22;margin:0 0 20px;background:#203249}#strange .lyrics-embed{order:3;position:static;margin-top:22px}#strange .lyrics-text{order:2}#strange .lyrics-note{order:4}#strange .genius-link{order:5}#strange .back-to-top{order:6}}
+
+/* Experimental timed reading, scoped to Stay Strange */
+#strange .lyrics-text .lyric-line{transition:color .25s,opacity .25s,transform .25s;opacity:.52}#strange.ds-sync-off .lyrics-text .lyric-line{opacity:1}#strange .lyrics-text .lyric-line.ds-active-line{color:#fff;opacity:1;font-weight:700;transform:translateX(5px);text-shadow:0 0 22px rgba(170,205,250,.24)}#strange .lyrics-text .lyric-line.ds-near-line{opacity:.8}.ds-sync-controls{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:12px;font-size:12px;color:#e1ebf6}.ds-sync-controls label{display:flex;align-items:center;gap:7px;cursor:pointer}.ds-sync-controls input{accent-color:#8cb9eb;width:15px;height:15px}#strange .ds-player-status{margin-top:9px}
 </style>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/design-system.css"><meta name="theme-color" content="#11151d"><meta property="og:image" content="https://darenstefan.com/assets/hero-banner.webp"><link rel="stylesheet" href="assets/shared-nav.css"></head>
 <body><a class="ds-skip" href="#lyrics-hero">Skip to content</a>
@@ -610,7 +613,7 @@
           <span class="lyric-line emphasis">I want you</span>
         </div>
         <div class="lyrics-aside">
-          <div class="ds-custom-player" aria-label="DARENSTEFAN custom audio player for Stay Strange"><div class="ds-player-top"><img src="assets/store/covers/laing.jpg" alt="" width="48" height="48"><div><strong>Stay Strange</strong><span>DARENSTEFAN · Preview player</span></div></div><audio id="ds-strange-audio" controls preload="none" src="https://downloads.darenstefan.com/downloads/Stay%20Strange.mp3">Your browser does not support audio playback.</audio><p class="ds-player-status" id="ds-strange-status">Testing audio playback first. Timed lyric highlighting is coming next.</p></div>
+          <div class="ds-custom-player" aria-label="DARENSTEFAN custom audio player for Stay Strange"><div class="ds-player-top"><img src="assets/store/covers/laing.jpg" alt="" width="48" height="48"><div><strong>Stay Strange</strong><span>DARENSTEFAN · Preview player</span></div></div><audio id="ds-strange-audio" controls preload="none" src="https://downloads.darenstefan.com/downloads/Stay%20Strange.mp3">Your browser does not support audio playback.</audio><div class="ds-sync-controls"><label><input id="ds-sync-enabled" type="checkbox" checked> Highlight lyrics</label><label><input id="ds-scroll-enabled" type="checkbox" checked> Auto-scroll</label></div><p class="ds-player-status" id="ds-strange-status" role="status">Timing preview: highlighting follows estimated positions, not verified vocal timestamps.</p></div>
           <div class="lyrics-embed">
             <p class="lyrics-embed-label">Stream on Spotify</p>
             <iframe src="https://open.spotify.com/embed/track/46jn8Izluqxx7nDiaTKRL0?utm_source=generator&theme=0" height="80" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
@@ -1067,6 +1070,49 @@
     reveals.forEach(el => observer.observe(el));
     const lyricSearch=document.getElementById('ds-lyric-search');
     if(lyricSearch){lyricSearch.addEventListener('input',()=>{const q=lyricSearch.value.trim().toLowerCase();let shown=0;document.querySelectorAll('.ds-lyric-card').forEach(card=>{const match=card.dataset.song.includes(q);card.hidden=!match;if(match)shown++});document.querySelector('.ds-no-results').hidden=shown!==0;});}
+
+    // Experimental timing preview. No fabricated timestamps: evenly spaced cues
+    // demonstrate the UX until the actual recording is timed line by line.
+    (function(){
+      const section=document.getElementById('strange');
+      const audio=document.getElementById('ds-strange-audio');
+      const highlight=document.getElementById('ds-sync-enabled');
+      const autoscroll=document.getElementById('ds-scroll-enabled');
+      const status=document.getElementById('ds-strange-status');
+      if(!section||!audio||!highlight||!autoscroll)return;
+      const lines=Array.from(section.querySelectorAll('.lyrics-text .lyric-line'));
+      let current=-1,lastScroll=0;
+      const clear=()=>lines.forEach(l=>l.classList.remove('ds-active-line','ds-near-line'));
+      function update(){
+        const duration=audio.duration;
+        if(!Number.isFinite(duration)||duration<=0||!lines.length)return;
+        const next=Math.min(lines.length-1,Math.floor(Math.max(0,audio.currentTime)/duration*lines.length));
+        if(!highlight.checked){section.classList.add('ds-sync-off');clear();return;}
+        section.classList.remove('ds-sync-off');
+        if(next===current)return;
+        current=next;clear();
+        lines[next].classList.add('ds-active-line');
+        if(lines[next-1])lines[next-1].classList.add('ds-near-line');
+        if(lines[next+1])lines[next+1].classList.add('ds-near-line');
+        if(autoscroll.checked&&!audio.paused){
+          const now=Date.now();
+          if(now-lastScroll>900){
+            const player=section.querySelector('.ds-custom-player');
+            const offset=window.innerWidth<=768?(player?.getBoundingClientRect().height||180)+110:150;
+            const y=window.scrollY+lines[next].getBoundingClientRect().top-offset;
+            window.scrollTo({top:Math.max(0,y),behavior:'smooth'});
+            lastScroll=now;
+          }
+        }
+      }
+      audio.addEventListener('loadedmetadata',()=>{status.textContent='Timing preview active — positions are estimated. Accurate lyric timestamps still need calibration.';update()});
+      audio.addEventListener('timeupdate',update);
+      audio.addEventListener('seeked',()=>{current=-1;update()});
+      audio.addEventListener('ended',()=>{current=-1;clear()});
+      highlight.addEventListener('change',()=>{current=-1;update()});
+      autoscroll.addEventListener('change',()=>{current=-1;update()});
+      section.classList.toggle('ds-sync-off',!highlight.checked);
+    })();
     function scrollToSong(id) {
       const el = document.getElementById(id);
       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
