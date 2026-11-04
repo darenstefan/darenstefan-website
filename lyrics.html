@@ -303,6 +303,10 @@
 .lyrics-section .genius-link{order:4;align-self:flex-start}
 .lyrics-section .back-to-top{order:5;align-self:flex-start}
 }
+
+/* Stay Strange: isolated custom-player experiment, preview only */
+.ds-custom-player{padding:15px;border-radius:17px;background:linear-gradient(135deg,#2b415b,#192536);border:1px solid rgba(168,193,220,.3);margin-bottom:20px;box-shadow:0 12px 30px rgba(0,0,0,.18)}.ds-player-top{display:flex;align-items:center;gap:12px;margin-bottom:14px}.ds-player-top img{width:48px;height:48px;border-radius:8px;object-fit:cover}.ds-player-top div{display:flex;flex-direction:column;gap:3px}.ds-player-top strong{font-size:15px;color:#fff}.ds-player-top span{font-size:12px;color:#bacce0}.ds-custom-player audio{width:100%;display:block;min-height:42px}.ds-player-status{font-size:11px;color:#c3d1df;line-height:1.5;margin-top:10px}
+@media(max-width:768px){#strange .ds-custom-player{order:1;position:sticky;top:76px;z-index:22;margin:0 0 20px;background:#203249}#strange .lyrics-embed{order:3;position:static;margin-top:22px}#strange .lyrics-text{order:2}#strange .lyrics-note{order:4}#strange .genius-link{order:5}#strange .back-to-top{order:6}}
 </style>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/design-system.css"><meta name="theme-color" content="#11151d"><meta property="og:image" content="https://darenstefan.com/assets/hero-banner.webp"><link rel="stylesheet" href="assets/shared-nav.css"></head>
 <body><a class="ds-skip" href="#lyrics-hero">Skip to content</a>
@@ -606,6 +610,7 @@
           <span class="lyric-line emphasis">I want you</span>
         </div>
         <div class="lyrics-aside">
+          <div class="ds-custom-player" aria-label="DARENSTEFAN custom audio player for Stay Strange"><div class="ds-player-top"><img src="assets/store/covers/laing.jpg" alt="" width="48" height="48"><div><strong>Stay Strange</strong><span>DARENSTEFAN · Preview player</span></div></div><audio id="ds-strange-audio" controls preload="none" src="https://downloads.darenstefan.com/downloads/Stay%20Strange.mp3">Your browser does not support audio playback.</audio><p class="ds-player-status" id="ds-strange-status">Testing audio playback first. Timed lyric highlighting is coming next.</p></div>
           <div class="lyrics-embed">
             <p class="lyrics-embed-label">Stream on Spotify</p>
             <iframe src="https://open.spotify.com/embed/track/46jn8Izluqxx7nDiaTKRL0?utm_source=generator&theme=0" height="80" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
