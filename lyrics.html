@@ -613,7 +613,7 @@
           <span class="lyric-line emphasis">I want you</span>
         </div>
         <div class="lyrics-aside">
-          <div class="ds-custom-player" aria-label="DARENSTEFAN custom audio player for Stay Strange"><div class="ds-player-top"><img src="assets/store/covers/laing.jpg" alt="" width="48" height="48"><div><strong>Stay Strange</strong><span>DARENSTEFAN · Preview player</span></div></div><audio id="ds-strange-audio" controls preload="none" src="https://downloads.darenstefan.com/downloads/Stay%20Strange.mp3">Your browser does not support audio playback.</audio><div class="ds-sync-controls"><label><input id="ds-sync-enabled" type="checkbox" checked> Highlight lyrics</label><label><input id="ds-scroll-enabled" type="checkbox" checked> Auto-scroll</label></div><p class="ds-player-status" id="ds-strange-status" role="status">Timing preview: highlighting follows estimated positions, not verified vocal timestamps.</p></div>
+          <div class="ds-custom-player" aria-label="DARENSTEFAN custom audio player for Stay Strange"><div class="ds-player-top"><img src="assets/store/covers/laing.jpg" alt="" width="48" height="48"><div><strong>Stay Strange</strong><span>DARENSTEFAN · Preview player</span></div></div><audio id="ds-strange-audio" controls preload="none" src="https://downloads.darenstefan.com/downloads/Stay%20Strange.mp3">Your browser does not support audio playback.</audio><div class="ds-sync-controls"><label><input id="ds-sync-enabled" type="checkbox" checked> Highlight lyrics</label><label><input id="ds-scroll-enabled" type="checkbox" checked> Auto-scroll</label></div><p class="ds-player-status" id="ds-strange-status" role="status">Musixmatch line timestamps loaded; some first-verse timings are still missing.</p></div>
           <div class="lyrics-embed">
             <p class="lyrics-embed-label">Stream on Spotify</p>
             <iframe src="https://open.spotify.com/embed/track/46jn8Izluqxx7nDiaTKRL0?utm_source=generator&theme=0" height="80" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
@@ -1071,46 +1071,57 @@
     const lyricSearch=document.getElementById('ds-lyric-search');
     if(lyricSearch){lyricSearch.addEventListener('input',()=>{const q=lyricSearch.value.trim().toLowerCase();let shown=0;document.querySelectorAll('.ds-lyric-card').forEach(card=>{const match=card.dataset.song.includes(q);card.hidden=!match;if(match)shown++});document.querySelector('.ds-no-results').hidden=shown!==0;});}
 
-    // Experimental timing preview. No fabricated timestamps: evenly spaced cues
-    // demonstrate the UX until the actual recording is timed line by line.
+    // Verified Musixmatch cue starts supplied by the artist. Missing early verse cues remain unsynced.
     (function(){
-      const section=document.getElementById('strange');
-      const audio=document.getElementById('ds-strange-audio');
-      const highlight=document.getElementById('ds-sync-enabled');
-      const autoscroll=document.getElementById('ds-scroll-enabled');
-      const status=document.getElementById('ds-strange-status');
+      const section=document.getElementById('strange'),audio=document.getElementById('ds-strange-audio');
+      const highlight=document.getElementById('ds-sync-enabled'),autoscroll=document.getElementById('ds-scroll-enabled'),status=document.getElementById('ds-strange-status');
       if(!section||!audio||!highlight||!autoscroll)return;
       const lines=Array.from(section.querySelectorAll('.lyrics-text .lyric-line'));
-      let current=-1,lastScroll=0;
-      const clear=()=>lines.forEach(l=>l.classList.remove('ds-active-line','ds-near-line'));
+      const sourceCues=[[13.66,"You talk too loud in quiet places"],[16.6,"You laugh before the joke is finished"],[19.68,"You apologise for things"],[22.13,"That didn't need an apology"],[25.76,"And then forget the ones that did"],[27.96,"You make a face when you're thinking"],[29.92,"Like the thought is physically happening"],[32.49,"Somewhere behind your left eye"],[46.79,"In a voice note"],[47.8,"At 1 AM"],[49.16,"I love that about you"],[51.96,"I love that about you"],[55.54,"I used to think I wanted someone simple"],[57.95,"Easy to read"],[59.45,"Easy to keep"],[60.93,"Then I met the complicated version of you"],[63.87,"And now simple sounds like"],[65.89,"Something I'd be bored by"],[67.01,"Stay strange"],[69.05,"Don't sand the edges down for me"],[73.61,"Stay strange"],[75.47,"I fell for the parts that don't make sense"],[79.76,"Your weird little fears"],[81.48,"Your contradictions"],[83.08,"The way you contain"],[84.74,"Things that shouldn't fit together"],[88.4,"But somehow do"],[91.63,"Please don't become"],[94.1,"Easier to love"],[98.13,"Please don't become"],[100.54,"Easier to love"],[105.84,"You cry at adverts"],[107.24,"But not at funerals"],[108.72,"You said you process things"],[110.46,"On a delay"],[111.58,"Like grief arrives"],[112.86,"Two weeks after"],[114.7,"In the middle of something unrelated"],[117.58,"You're terrified of being too much"],[119.56,"So sometimes you make yourself"],[121.19,"Less"],[122.65,"And I can always tell"],[124.22,"There's a version of you"],[125.62,"Hovering just outside the sentence"],[128.19,"Waiting to see if it's safe"],[130.18,"It's safe"],[131.05,"It's safe"],[132.06,"I don't want the version"],[133.86,"You rehearsed in the mirror"],[135.14,"I don't want the one"],[136.71,"That already knows how this goes"],[138.06,"I want the one"],[139.92,"That's figuring it out"],[141.38,"Out loud"],[141.83,"In front of me"],[143.08,"Stay strange"],[144.71,"Don't sand the edges down for me"],[149.04,"Stay strange"],[151.03,"I fell for the parts that don't make sense"],[155.51,"Your weird little fears"],[157.17,"Your contradictions"],[158.76,"The way you contain"],[160.35,"Things that shouldn't fit together"],[163.61,"But somehow do"],[167.57,"Please don't become"],[168.93,"Easier to love"],[173.79,"Please don't become"],[176.23,"Easier to love"],[182.43,"I think we've both spent a long time"],[185.97,"Trying to be the version"],[186.99,"Someone could handle"],[189.01,"And there's something almost funny about that"],[190.82,"Two people"],[192.12,"Making themselves smaller"],[195.43,"So the other one"],[196.41,"Wouldn't leave"],[198.5,"What if we just"],[199.27,"Didn't do that"],[200.56,"What if we just"],[201.75,"Showed up wrong"],[203.22,"And stayed anyway"],[206.18,"Stay strange"],[207.72,"I'm not here to fix the edges"],[212.13,"Stay strange"],[214.15,"I'm learning the language of you"],[218.55,"Your awkward silences"],[220.01,"Your over-explanations"],[223.05,"The way you love"],[224.59,"Like you're still deciding"],[226.94,"If you're allowed to"],[230.06,"You're allowed to"],[233.26,"You're allowed to"],[235.69,"Please don't become"],[238.73,"Easier to love"],[241.87,"I don't want easier"],[246.77,"I want you"]];
+      const normalize=s=>s.toLowerCase().replace(/[’‘]/g,"'").replace(/[^a-z0-9]+/g,' ').trim();
+      let searchFrom=0;
+      const mapped=sourceCues.map(([time,text])=>{
+        const target=normalize(text);
+        const index=lines.findIndex((line,i)=>i>=searchFrom&&normalize(line.textContent)===target);
+        if(index>=0)searchFrom=index+1;
+        return {time,index,text};
+      });
+      const missing=mapped.filter(c=>c.index<0);
+      if(missing.length)console.warn('Unmatched Stay Strange lyric cues:',missing.map(c=>c.text));
+      let active=-1,lastScroll=0;
+      function clear(){lines.forEach(l=>l.classList.remove('ds-active-line','ds-near-line'))}
       function update(){
-        const duration=audio.duration;
-        if(!Number.isFinite(duration)||duration<=0||!lines.length)return;
-        const next=Math.min(lines.length-1,Math.floor(Math.max(0,audio.currentTime)/duration*lines.length));
-        if(!highlight.checked){section.classList.add('ds-sync-off');clear();return;}
+        if(!highlight.checked){section.classList.add('ds-sync-off');clear();active=-1;return}
         section.classList.remove('ds-sync-off');
-        if(next===current)return;
-        current=next;clear();
-        lines[next].classList.add('ds-active-line');
-        if(lines[next-1])lines[next-1].classList.add('ds-near-line');
-        if(lines[next+1])lines[next+1].classList.add('ds-near-line');
+        const t=audio.currentTime;
+        let next=-1;
+        for(let i=0;i<mapped.length;i++){if(mapped[i].time<=t)next=i;else break}
+        if(t>=262.05)next=-1;
+        const lineIndex=next<0?-1:mapped[next].index;
+        if(next===active)return;
+        active=next;clear();
+        if(lineIndex<0)return;
+        lines[lineIndex].classList.add('ds-active-line');
+        if(lines[lineIndex-1])lines[lineIndex-1].classList.add('ds-near-line');
+        if(lines[lineIndex+1])lines[lineIndex+1].classList.add('ds-near-line');
         if(autoscroll.checked&&!audio.paused){
           const now=Date.now();
           if(now-lastScroll>900){
             const player=section.querySelector('.ds-custom-player');
             const offset=window.innerWidth<=768?(player?.getBoundingClientRect().height||180)+110:150;
-            const y=window.scrollY+lines[next].getBoundingClientRect().top-offset;
+            const y=window.scrollY+lines[lineIndex].getBoundingClientRect().top-offset;
             window.scrollTo({top:Math.max(0,y),behavior:'smooth'});
             lastScroll=now;
           }
         }
       }
-      audio.addEventListener('loadedmetadata',()=>{status.textContent='Timing preview active — positions are estimated. Accurate lyric timestamps still need calibration.';update()});
+      status.textContent='Musixmatch timestamps loaded. Some early verse lines have no supplied timing.';
       audio.addEventListener('timeupdate',update);
-      audio.addEventListener('seeked',()=>{current=-1;update()});
-      audio.addEventListener('ended',()=>{current=-1;clear()});
-      highlight.addEventListener('change',()=>{current=-1;update()});
-      autoscroll.addEventListener('change',()=>{current=-1;update()});
+      audio.addEventListener('seeked',()=>{active=-1;update()});
+      audio.addEventListener('play',()=>{active=-1;update()});
+      audio.addEventListener('ended',()=>{active=-1;clear()});
+      highlight.addEventListener('change',()=>{active=-1;update()});
+      autoscroll.addEventListener('change',()=>{active=-1;update()});
       section.classList.toggle('ds-sync-off',!highlight.checked);
     })();
     function scrollToSong(id) {
