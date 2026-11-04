@@ -309,7 +309,8 @@
 @media(max-width:768px){#strange .ds-custom-player{order:1;position:sticky;top:76px;z-index:22;margin:0 0 20px;background:#203249}#strange .lyrics-embed{order:3;position:static;margin-top:22px}#strange .lyrics-text{order:2}#strange .lyrics-note{order:4}#strange .genius-link{order:5}#strange .back-to-top{order:6}}
 
 /* Experimental timed reading, scoped to Stay Strange */
-#strange .lyrics-text .lyric-line{transition:color .25s,opacity .25s,transform .25s;opacity:.52}#strange.ds-sync-off .lyrics-text .lyric-line{opacity:1}#strange .lyrics-text .lyric-line.ds-active-line{color:#fff;opacity:1;font-weight:700;transform:translateX(5px);text-shadow:0 0 22px rgba(170,205,250,.24)}#strange .lyrics-text .lyric-line.ds-near-line{opacity:.8}.ds-sync-controls{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:12px;font-size:12px;color:#e1ebf6}.ds-sync-controls label{display:flex;align-items:center;gap:7px;cursor:pointer}.ds-sync-controls input{accent-color:#8cb9eb;width:15px;height:15px}#strange .ds-player-status{margin-top:9px}
+#strange .lyrics-text .lyric-line,#insomnia .lyrics-text .lyric-line{transition:color .25s,opacity .25s,transform .25s;opacity:.52}#strange.ds-sync-off .lyrics-text .lyric-line,#insomnia.ds-sync-off .lyrics-text .lyric-line{opacity:1}#strange .lyrics-text .lyric-line.ds-active-line,#insomnia .lyrics-text .lyric-line.ds-active-line{color:#fff;opacity:1;font-weight:700;transform:translateX(5px);text-shadow:0 0 22px rgba(170,205,250,.24)}#strange .lyrics-text .lyric-line.ds-near-line,#insomnia .lyrics-text .lyric-line.ds-near-line{opacity:.8}.ds-sync-controls{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:12px;font-size:12px;color:#e1ebf6}.ds-sync-controls label{display:flex;align-items:center;gap:7px;cursor:pointer}.ds-sync-controls input{accent-color:#8cb9eb;width:15px;height:15px}#strange .ds-player-status{margin-top:9px}
+@media(max-width:768px){#insomnia .ds-custom-player{order:1;position:sticky;top:76px;z-index:22;margin:0 0 20px;background:#203249}#insomnia .lyrics-embed{order:3;position:static;margin-top:22px}#insomnia .lyrics-text{order:2}#insomnia .lyrics-note{order:4}#insomnia .genius-link{order:5}#insomnia .back-to-top{order:6}}
 </style>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/design-system.css"><meta name="theme-color" content="#11151d"><meta property="og:image" content="https://darenstefan.com/assets/hero-banner.webp"><link rel="stylesheet" href="assets/shared-nav.css"></head>
 <body><a class="ds-skip" href="#lyrics-hero">Skip to content</a>
@@ -428,91 +429,104 @@
       </div>
       <div class="lyrics-body reveal">
         <div class="lyrics-text">
-          <span class="section-tag">Verse 1</span>
-          <span class="lyric-line">I know your 7 AM</span>
-          <span class="lyric-line">better than my own midnight</span>
-          <span class="lyric-line">the way your voice comes in slow</span>
-          <span class="lyric-line">before the coffee</span>
-          <span class="lyric-line">before you're really there</span>
-          <span class="lyric-break"></span>
-          <span class="lyric-line">I learned your curtains</span>
-          <span class="lyric-line">the colour of your window light</span>
-          <span class="lyric-line">gold on your side</span>
-          <span class="lyric-line emphasis">blue on mine</span>
-          <span class="lyric-line">we never talk about that</span>
-          <span class="lyric-break"></span>
-          <span class="lyric-line">Your city is waking up</span>
-          <span class="lyric-line">and I'm still in yesterday</span>
-          <span class="lyric-line">holding the phone like it's something warm</span>
-
-          <span class="section-tag">Pre-Chorus</span>
-          <span class="lyric-line">I rearranged my sleep</span>
-          <span class="lyric-line">so the hours would overlap</span>
-          <span class="lyric-line">I told myself it was love</span>
-          <span class="lyric-line">maybe it was</span>
-          <span class="lyric-line emphasis">maybe it was just</span>
-          <span class="lyric-line">wanting to be somewhere</span>
-          <span class="lyric-line">I couldn't be</span>
-
+          <span class="section-tag">Verse</span>
+          <span class="lyric-line" data-time="13.46">I know your 7 AM</span>
+          <span class="lyric-line" data-time="16.27">Better than my own midnight</span>
+          <span class="lyric-line" data-time="19.33">The way your voice comes in slow</span>
+          <span class="lyric-line" data-time="21.60">Before the coffee</span>
+          <span class="lyric-line" data-time="23.53">Before you're really there</span>
+          <span class="lyric-line" data-time="26.36">I learned your curtains</span>
+          <span class="lyric-line" data-time="28.54">The colour of your window light</span>
+          <span class="lyric-line" data-time="30.99">Gold on your side</span>
+          <span class="lyric-line" data-time="32.54">Blue on mine</span>
+          <span class="lyric-line" data-time="35.62">We never talk about that</span>
+          <span class="lyric-line" data-time="38.45">Your city is waking up</span>
+          <span class="lyric-line" data-time="41.20">And I'm still in yesterday</span>
+          <span class="lyric-line" data-time="44.49">Holding the phone like it's something warm</span>
+          <span class="section-tag">Pre-chorus</span>
+          <span class="lyric-line" data-time="51.47">I rearranged my sleep</span>
+          <span class="lyric-line" data-time="53.42">So the hours would overlap</span>
+          <span class="lyric-line" data-time="54.83">I told myself it was love</span>
+          <span class="lyric-line" data-time="57.03">Maybe it was</span>
+          <span class="lyric-line" data-time="58.41">Maybe it was just</span>
+          <span class="lyric-line" data-time="60.30">Wanting to be somewhere</span>
+          <span class="lyric-line" data-time="61.91">I couldn't be</span>
           <span class="section-tag">Chorus</span>
-          <span class="lyric-line emphasis">Your morning is my insomnia</span>
-          <span class="lyric-line">the sun on your face</span>
-          <span class="lyric-line">the dark at my back</span>
-          <span class="lyric-line">I stay awake just to exist beside you</span>
-          <span class="lyric-line">in a timezone that was never mine</span>
-          <span class="lyric-break"></span>
-          <span class="lyric-line">Your coffee going cold</span>
-          <span class="lyric-line">my ceiling going quiet</span>
-          <span class="lyric-line">I don't know where we are</span>
-          <span class="lyric-line emphasis">but I'm not leaving</span>
-
-          <span class="section-tag">Verse 2</span>
-          <span class="lyric-line">I know when you go quiet</span>
-          <span class="lyric-line">it's 11 PM where you are</span>
-          <span class="lyric-line">you're brushing your teeth</span>
-          <span class="lyric-line">or falling asleep mid-sentence</span>
-          <span class="lyric-line">and I wait</span>
-          <span class="lyric-break"></span>
-          <span class="lyric-line">I know the lag before your laugh</span>
-          <span class="lyric-line">half a second of silence</span>
-          <span class="lyric-line emphasis">then you</span>
-          <span class="lyric-break"></span>
-          <span class="lyric-line">I've watched you freeze mid-frame</span>
-          <span class="lyric-line">pixelated, mid-blink</span>
-          <span class="lyric-line">and I thought</span>
-          <span class="lyric-line emphasis">even buffering</span>
-          <span class="lyric-line emphasis">you're the most real thing I have right now</span>
-
+          <span class="lyric-line" data-time="63.94">Your morning is my insomnia</span>
+          <span class="lyric-line" data-time="67.57">The sun on your face</span>
+          <span class="lyric-line" data-time="70.65">The dark at my back</span>
+          <span class="lyric-line" data-time="76.63">I stay awake just to exist beside you</span>
+          <span class="lyric-line" data-time="79.63">In a timezone that was never mine</span>
+          <span class="lyric-line" data-time="83.08">Your coffee going cold</span>
+          <span class="lyric-line" data-time="84.49">My ceiling going quiet</span>
+          <span class="lyric-line" data-time="86.10">I don't know where we are</span>
+          <span class="lyric-line" data-time="87.53">But I'm not leaving</span>
+          <span class="lyric-line" data-time="90.46">I'm not leaving</span>
+          <span class="section-tag">Verse</span>
+          <span class="lyric-line" data-time="93.46">I know when you go quiet</span>
+          <span class="lyric-line" data-time="95.10">It's 11 PM where you are</span>
+          <span class="lyric-line" data-time="98.62">You're brushing your teeth</span>
+          <span class="lyric-line" data-time="100.39">Or falling asleep mid-sentence</span>
+          <span class="lyric-line" data-time="103.38">And I wait</span>
+          <span class="lyric-line" data-time="104.97">I know the lag before your laugh</span>
+          <span class="lyric-line" data-time="107.24">Half a second of silence</span>
+          <span class="lyric-line" data-time="108.73">Then you</span>
+          <span class="lyric-line" data-time="110.35">I've memorised the delay</span>
+          <span class="lyric-line" data-time="111.68">Like it's part of you</span>
+          <span class="lyric-line" data-time="112.95">I've watched you freeze mid-frame</span>
+          <span class="lyric-line" data-time="114.30">Pixelated, mid-blink</span>
+          <span class="lyric-line" data-time="115.99">And I thought</span>
+          <span class="lyric-line" data-time="117.04">Even buffering</span>
+          <span class="lyric-line" data-time="117.77">You're the most real thing I have right now</span>
+          <span class="section-tag">Pre-chorus</span>
+          <span class="lyric-line" data-time="123.31">I stopped making plans</span>
+          <span class="lyric-line" data-time="125.27">For the hours you'd be sleeping</span>
+          <span class="lyric-line" data-time="126.89">Kept the window open</span>
+          <span class="lyric-line" data-time="128.61">Kept the volume low</span>
+          <span class="lyric-line" data-time="129.97">Just in case</span>
+          <span class="lyric-line" data-time="130.71">Just in case you came back online</span>
+          <span class="lyric-line" data-time="132.35">And needed someone</span>
+          <span class="lyric-line" data-time="133.85">Already awake</span>
+          <span class="section-tag">Chorus</span>
+          <span class="lyric-line" data-time="135.75">Your morning is my insomnia</span>
+          <span class="lyric-line" data-time="139.67">The sun on your face</span>
+          <span class="lyric-line" data-time="142.58">The dark at my back</span>
+          <span class="lyric-line" data-time="148.74">I stay awake just to exist beside you</span>
+          <span class="lyric-line" data-time="151.47">In a timezone that was never mine</span>
+          <span class="lyric-line" data-time="154.98">Your coffee going cold</span>
+          <span class="lyric-line" data-time="156.39">My ceiling going quiet</span>
+          <span class="lyric-line" data-time="157.93">I don't know where we are</span>
+          <span class="lyric-line" data-time="159.43">But I'm not leaving</span>
+          <span class="lyric-line" data-time="162.28">I'm not leaving</span>
           <span class="section-tag">Bridge</span>
-          <span class="lyric-line">I saw a departure board once</span>
-          <span class="lyric-line">your city on the screen</span>
-          <span class="lyric-line">and I stood there</span>
-          <span class="lyric-line">longer than I should have</span>
-          <span class="lyric-break"></span>
-          <span class="lyric-line">I don't know what gate</span>
-          <span class="lyric-line">I don't know what I'd even say</span>
-          <span class="lyric-line">I just wanted the distance</span>
-          <span class="lyric-line emphasis">to have a door somewhere</span>
-          <span class="lyric-break"></span>
-          <span class="lyric-line">you texted me "good morning"</span>
-          <span class="lyric-line">at 3 AM my time</span>
-          <span class="lyric-line">and I said "good morning"</span>
-          <span class="lyric-line">like I hadn't been awake for hours</span>
-          <span class="lyric-line emphasis">waiting for exactly that</span>
-
-          <span class="section-tag">Final Chorus</span>
-          <span class="lyric-line emphasis">Your morning is my insomnia</span>
-          <span class="lyric-line">I rewired myself around your light</span>
-          <span class="lyric-line">I stay awake just to exist beside you</span>
-          <span class="lyric-line">because beside you is the only place</span>
-          <span class="lyric-line">that doesn't feel like waiting</span>
-          <span class="lyric-break"></span>
-          <span class="lyric-line">Your voice still in my headphones</span>
-          <span class="lyric-line">your city in my search bar</span>
-          <span class="lyric-line">I don't know where we're going</span>
-          <span class="lyric-line emphasis">but I'll be awake when you get there</span>
+          <span class="lyric-line" data-time="168.86">I saw a departure board once</span>
+          <span class="lyric-line" data-time="171.62">Your city on the screen</span>
+          <span class="lyric-line" data-time="174.68">And I stood there</span>
+          <span class="lyric-line" data-time="176.63">Longer than I should have</span>
+          <span class="lyric-line" data-time="178.36">I don't know what gate</span>
+          <span class="lyric-line" data-time="180.71">I don't know what I'd even say</span>
+          <span class="lyric-line" data-time="183.68">I just wanted the distance</span>
+          <span class="lyric-line" data-time="186.54">To have a door somewhere</span>
+          <span class="lyric-line" data-time="190.56">You texted me</span>
+          <span class="lyric-line" data-time="191.57">&quot;good morning&quot;</span>
+          <span class="lyric-line" data-time="192.92">At 3 AM my time</span>
+          <span class="lyric-line" data-time="195.29">And I said</span>
+          <span class="lyric-line" data-time="197.04">&quot;good morning&quot;</span>
+          <span class="lyric-line" data-time="199.13">Like I hadn't been awake for hours</span>
+          <span class="lyric-line" data-time="202.18">Waiting for exactly that</span>
+          <span class="section-tag">Chorus</span>
+          <span class="lyric-line" data-time="205.72">Your morning is my insomnia</span>
+          <span class="lyric-line" data-time="209.44">I rewired myself around your light</span>
+          <span class="lyric-line" data-time="212.94">I stay awake just to exist beside you</span>
+          <span class="lyric-line" data-time="217.63">Because beside you is the only place</span>
+          <span class="lyric-line" data-time="220.40">That doesn't feel like waiting</span>
+          <span class="lyric-line" data-time="223.39">Your voice still in my headphones</span>
+          <span class="lyric-line" data-time="226.29">Your city in my search bar</span>
+          <span class="lyric-line" data-time="230.67">I don't know where we're going</span>
+          <span class="lyric-line" data-time="232.37">But I'll be awake when you get there</span>
+          <span class="lyric-line" data-time="245.64">I'll be awake when you get there</span>
         </div>
-        <div class="lyrics-aside">
+        <div class="lyrics-aside"><div class="ds-custom-player"><div class="ds-player-top"><img src="assets/store/covers/laing.jpg" alt="" width="48" height="48"><div><strong>Your Morning Is My Insomnia</strong><span>DARENSTEFAN · Synced lyrics</span></div></div><audio id="ds-insomnia-audio" controls preload="none" src="https://downloads.darenstefan.com/downloads/Your%20Morning%20Is%20My%20Insomnia.mp3"></audio><div class="ds-sync-controls"><label><input id="ds-insomnia-sync" type="checkbox" checked> Highlight lyrics</label><label><input id="ds-insomnia-scroll" type="checkbox" checked> Auto-scroll</label></div></div>
           <div class="lyrics-embed">
             <p class="lyrics-embed-label">Stream on Spotify</p>
             <iframe src="https://open.spotify.com/embed/track/18HC2NTs2o9lZFEWGw9RIM?utm_source=generator&theme=0" height="80" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
@@ -537,83 +551,113 @@
       </div>
       <div class="lyrics-body reveal">
         <div class="lyrics-text">
-          <span class="section-tag">Verse 1</span>
-          <span class="lyric-line">You talk too loud in quiet places</span>
-          <span class="lyric-line">you laugh before the joke is finished</span>
-          <span class="lyric-line">you apologise for things</span>
-          <span class="lyric-line">that didn't need an apology</span>
-          <span class="lyric-line">and then forget the ones that did</span>
-          <span class="lyric-break"></span>
-          <span class="lyric-line">You make a face when you're thinking</span>
-          <span class="lyric-line">like the thought is physically happening</span>
-          <span class="lyric-line">somewhere behind your left eye</span>
-          <span class="lyric-line">I've never told you that</span>
-          <span class="lyric-line emphasis">I just watch</span>
-          <span class="lyric-break"></span>
-          <span class="lyric-line">You reorganise your feelings</span>
-          <span class="lyric-line">in the wrong order</span>
-          <span class="lyric-line">hurt first</span>
-          <span class="lyric-line">then confused</span>
-          <span class="lyric-line">then honest</span>
-          <span class="lyric-line">three days later</span>
-          <span class="lyric-line">in a voice note</span>
-          <span class="lyric-line">at 1 AM</span>
-          <span class="lyric-line emphasis">I love that about you</span>
-
+          <span class="section-tag">Verse</span>
+          <span class="lyric-line" data-time="13.66">You talk too loud in quiet places</span>
+          <span class="lyric-line" data-time="16.60">You laugh before the joke is finished</span>
+          <span class="lyric-line" data-time="19.68">You apologise for things</span>
+          <span class="lyric-line" data-time="22.13">That didn't need an apology</span>
+          <span class="lyric-line" data-time="25.76">And then forget the ones that did</span>
+          <span class="lyric-line" data-time="27.96">You make a face when you're thinking</span>
+          <span class="lyric-line" data-time="29.92">Like the thought is physically happening</span>
+          <span class="lyric-line" data-time="32.49">Somewhere behind your left eye</span>
+          <span class="lyric-line" data-time="46.79">In a voice note</span>
+          <span class="lyric-line" data-time="47.80">At 1 AM</span>
+          <span class="lyric-line" data-time="49.16">I love that about you</span>
+          <span class="lyric-line" data-time="51.96">I love that about you</span>
+          <span class="section-tag">Pre-chorus</span>
+          <span class="lyric-line" data-time="55.54">I used to think I wanted someone simple</span>
+          <span class="lyric-line" data-time="57.95">Easy to read</span>
+          <span class="lyric-line" data-time="59.45">Easy to keep</span>
+          <span class="lyric-line" data-time="60.93">Then I met the complicated version of you</span>
+          <span class="lyric-line" data-time="63.87">And now simple sounds like</span>
+          <span class="lyric-line" data-time="65.89">Something I'd be bored by</span>
           <span class="section-tag">Chorus</span>
-          <span class="lyric-line emphasis">Stay strange</span>
-          <span class="lyric-line">don't sand the edges down for me</span>
-          <span class="lyric-line emphasis">stay strange</span>
-          <span class="lyric-line">I fell for the parts that don't make sense</span>
-          <span class="lyric-line">your weird little fears</span>
-          <span class="lyric-line">your contradictions</span>
-          <span class="lyric-line">the way you contain</span>
-          <span class="lyric-line">things that shouldn't fit together</span>
-          <span class="lyric-line emphasis">but somehow do</span>
-          <span class="lyric-break"></span>
-          <span class="lyric-line">Please don't become</span>
-          <span class="lyric-line emphasis">easier to love</span>
-
-          <span class="section-tag">Verse 2</span>
-          <span class="lyric-line">You cry at adverts</span>
-          <span class="lyric-line">but not at funerals</span>
-          <span class="lyric-line">you said you process things on a delay</span>
-          <span class="lyric-line">like grief arrives two weeks after</span>
-          <span class="lyric-line">in the middle of something unrelated</span>
-          <span class="lyric-break"></span>
-          <span class="lyric-line">You're terrified of being too much</span>
-          <span class="lyric-line">so sometimes you make yourself less</span>
-          <span class="lyric-line">and I can always tell</span>
-          <span class="lyric-break"></span>
-          <span class="lyric-line">there's a version of you</span>
-          <span class="lyric-line">hovering just outside the sentence</span>
-          <span class="lyric-line">waiting to see if it's safe</span>
-          <span class="lyric-line emphasis">It's safe</span>
-
+          <span class="lyric-line" data-time="67.01">Stay strange</span>
+          <span class="lyric-line" data-time="69.05">Don't sand the edges down for me</span>
+          <span class="lyric-line" data-time="73.61">Stay strange</span>
+          <span class="lyric-line" data-time="75.47">I fell for the parts that don't make sense</span>
+          <span class="lyric-line" data-time="79.76">Your weird little fears</span>
+          <span class="lyric-line" data-time="81.48">Your contradictions</span>
+          <span class="lyric-line" data-time="83.08">The way you contain</span>
+          <span class="lyric-line" data-time="84.74">Things that shouldn't fit together</span>
+          <span class="lyric-line" data-time="88.40">But somehow do</span>
+          <span class="lyric-line" data-time="91.63">Please don't become</span>
+          <span class="lyric-line" data-time="94.10">Easier to love</span>
+          <span class="lyric-line" data-time="98.13">Please don't become</span>
+          <span class="lyric-line" data-time="100.54">Easier to love</span>
+          <span class="section-tag">Verse</span>
+          <span class="lyric-line" data-time="105.84">You cry at adverts</span>
+          <span class="lyric-line" data-time="107.24">But not at funerals</span>
+          <span class="lyric-line" data-time="108.72">You said you process things</span>
+          <span class="lyric-line" data-time="110.46">On a delay</span>
+          <span class="lyric-line" data-time="111.58">Like grief arrives</span>
+          <span class="lyric-line" data-time="112.86">Two weeks after</span>
+          <span class="lyric-line" data-time="114.70">In the middle of something unrelated</span>
+          <span class="lyric-line" data-time="117.58">You're terrified of being too much</span>
+          <span class="lyric-line" data-time="119.56">So sometimes you make yourself</span>
+          <span class="lyric-line" data-time="121.19">Less</span>
+          <span class="lyric-line" data-time="122.65">And I can always tell</span>
+          <span class="lyric-line" data-time="124.22">There's a version of you</span>
+          <span class="lyric-line" data-time="125.62">Hovering just outside the sentence</span>
+          <span class="lyric-line" data-time="128.19">Waiting to see if it's safe</span>
+          <span class="lyric-line" data-time="130.18">It's safe</span>
+          <span class="lyric-line" data-time="131.05">It's safe</span>
+          <span class="section-tag">Pre-chorus</span>
+          <span class="lyric-line" data-time="132.06">I don't want the version</span>
+          <span class="lyric-line" data-time="133.86">You rehearsed in the mirror</span>
+          <span class="lyric-line" data-time="135.14">I don't want the one</span>
+          <span class="lyric-line" data-time="136.71">That already knows how this goes</span>
+          <span class="lyric-line" data-time="138.06">I want the one</span>
+          <span class="lyric-line" data-time="139.92">That's figuring it out</span>
+          <span class="lyric-line" data-time="141.38">Out loud</span>
+          <span class="lyric-line" data-time="141.83">In front of me</span>
+          <span class="section-tag">Chorus</span>
+          <span class="lyric-line" data-time="143.08">Stay strange</span>
+          <span class="lyric-line" data-time="144.71">Don't sand the edges down for me</span>
+          <span class="lyric-line" data-time="149.04">Stay strange</span>
+          <span class="lyric-line" data-time="151.03">I fell for the parts that don't make sense</span>
+          <span class="lyric-line" data-time="155.51">Your weird little fears</span>
+          <span class="lyric-line" data-time="157.17">Your contradictions</span>
+          <span class="lyric-line" data-time="158.76">The way you contain</span>
+          <span class="lyric-line" data-time="160.35">Things that shouldn't fit together</span>
+          <span class="lyric-line" data-time="163.61">But somehow do</span>
+          <span class="lyric-line" data-time="167.57">Please don't become</span>
+          <span class="lyric-line" data-time="168.93">Easier to love</span>
+          <span class="lyric-line" data-time="173.79">Please don't become</span>
+          <span class="lyric-line" data-time="176.23">Easier to love</span>
           <span class="section-tag">Bridge</span>
-          <span class="lyric-line">I think we've both spent a long time</span>
-          <span class="lyric-line">trying to be the version</span>
-          <span class="lyric-line">someone could handle</span>
-          <span class="lyric-break"></span>
-          <span class="lyric-line">what if we just didn't do that</span>
-          <span class="lyric-line">what if we just showed up wrong</span>
-          <span class="lyric-line emphasis">and stayed anyway</span>
-
-          <span class="section-tag">Final Chorus</span>
-          <span class="lyric-line emphasis">Stay strange</span>
-          <span class="lyric-line">I'm learning the language of you</span>
-          <span class="lyric-line">your awkward silences</span>
-          <span class="lyric-line">your over-explanations</span>
-          <span class="lyric-line">the way you love</span>
-          <span class="lyric-line emphasis">like you're still deciding if you're allowed to</span>
-          <span class="lyric-break"></span>
-          <span class="lyric-line emphasis">You're allowed to</span>
-          <span class="lyric-break"></span>
-          <span class="lyric-line">I don't want easier</span>
-          <span class="lyric-line emphasis">I want you</span>
+          <span class="lyric-line" data-time="182.43">I think we've both spent a long time</span>
+          <span class="lyric-line" data-time="185.97">Trying to be the version</span>
+          <span class="lyric-line" data-time="186.99">Someone could handle</span>
+          <span class="lyric-line" data-time="189.01">And there's something almost funny about that</span>
+          <span class="lyric-line" data-time="190.82">Two people</span>
+          <span class="lyric-line" data-time="192.12">Making themselves smaller</span>
+          <span class="lyric-line" data-time="195.43">So the other one</span>
+          <span class="lyric-line" data-time="196.41">Wouldn't leave</span>
+          <span class="lyric-line" data-time="198.50">What if we just</span>
+          <span class="lyric-line" data-time="199.27">Didn't do that</span>
+          <span class="lyric-line" data-time="200.56">What if we just</span>
+          <span class="lyric-line" data-time="201.75">Showed up wrong</span>
+          <span class="lyric-line" data-time="203.22">And stayed anyway</span>
+          <span class="section-tag">Chorus</span>
+          <span class="lyric-line" data-time="206.18">Stay strange</span>
+          <span class="lyric-line" data-time="207.72">I'm not here to fix the edges</span>
+          <span class="lyric-line" data-time="212.13">Stay strange</span>
+          <span class="lyric-line" data-time="214.15">I'm learning the language of you</span>
+          <span class="lyric-line" data-time="218.55">Your awkward silences</span>
+          <span class="lyric-line" data-time="220.01">Your over-explanations</span>
+          <span class="lyric-line" data-time="223.05">The way you love</span>
+          <span class="lyric-line" data-time="224.59">Like you're still deciding</span>
+          <span class="lyric-line" data-time="226.94">If you're allowed to</span>
+          <span class="lyric-line" data-time="230.06">You're allowed to</span>
+          <span class="lyric-line" data-time="233.26">You're allowed to</span>
+          <span class="lyric-line" data-time="235.69">Please don't become</span>
+          <span class="lyric-line" data-time="238.73">Easier to love</span>
+          <span class="lyric-line" data-time="241.87">I don't want easier</span>
+          <span class="lyric-line" data-time="246.77">I want you</span>
         </div>
         <div class="lyrics-aside">
-          <div class="ds-custom-player" aria-label="DARENSTEFAN custom audio player for Stay Strange"><div class="ds-player-top"><img src="assets/store/covers/laing.jpg" alt="" width="48" height="48"><div><strong>Stay Strange</strong><span>DARENSTEFAN · Preview player</span></div></div><audio id="ds-strange-audio" controls preload="none" src="https://downloads.darenstefan.com/downloads/Stay%20Strange.mp3">Your browser does not support audio playback.</audio><div class="ds-sync-controls"><label><input id="ds-sync-enabled" type="checkbox" checked> Highlight lyrics</label><label><input id="ds-scroll-enabled" type="checkbox" checked> Auto-scroll</label></div><p class="ds-player-status" id="ds-strange-status" role="status">Musixmatch line timestamps loaded; some first-verse timings are still missing.</p></div>
+          <div class="ds-custom-player" aria-label="DARENSTEFAN custom audio player for Stay Strange"><div class="ds-player-top"><img src="assets/store/covers/laing.jpg" alt="" width="48" height="48"><div><strong>Stay Strange</strong><span>DARENSTEFAN · Preview player</span></div></div><audio id="ds-strange-audio" controls preload="none" src="https://downloads.darenstefan.com/downloads/Stay%20Strange.mp3">Your browser does not support audio playback.</audio><div class="ds-sync-controls"><label><input id="ds-strange-sync" type="checkbox" checked> Highlight lyrics</label><label><input id="ds-strange-scroll" type="checkbox" checked> Auto-scroll</label></div><p class="ds-player-status" id="ds-strange-status" role="status">Musixmatch line timestamps loaded; some first-verse timings are still missing.</p></div>
           <div class="lyrics-embed">
             <p class="lyrics-embed-label">Stream on Spotify</p>
             <iframe src="https://open.spotify.com/embed/track/46jn8Izluqxx7nDiaTKRL0?utm_source=generator&theme=0" height="80" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
@@ -1071,58 +1115,41 @@
     const lyricSearch=document.getElementById('ds-lyric-search');
     if(lyricSearch){lyricSearch.addEventListener('input',()=>{const q=lyricSearch.value.trim().toLowerCase();let shown=0;document.querySelectorAll('.ds-lyric-card').forEach(card=>{const match=card.dataset.song.includes(q);card.hidden=!match;if(match)shown++});document.querySelector('.ds-no-results').hidden=shown!==0;});}
 
-    // Verified Musixmatch cue starts supplied by the artist. Missing early verse cues remain unsynced.
+    // Artist-supplied Musixmatch timestamps; lyrics and cues share one source of truth.
     (function(){
-      const section=document.getElementById('strange'),audio=document.getElementById('ds-strange-audio');
-      const highlight=document.getElementById('ds-sync-enabled'),autoscroll=document.getElementById('ds-scroll-enabled'),status=document.getElementById('ds-strange-status');
-      if(!section||!audio||!highlight||!autoscroll)return;
-      const lines=Array.from(section.querySelectorAll('.lyrics-text .lyric-line'));
-      const sourceCues=[[13.66,"You talk too loud in quiet places"],[16.6,"You laugh before the joke is finished"],[19.68,"You apologise for things"],[22.13,"That didn't need an apology"],[25.76,"And then forget the ones that did"],[27.96,"You make a face when you're thinking"],[29.92,"Like the thought is physically happening"],[32.49,"Somewhere behind your left eye"],[46.79,"In a voice note"],[47.8,"At 1 AM"],[49.16,"I love that about you"],[51.96,"I love that about you"],[55.54,"I used to think I wanted someone simple"],[57.95,"Easy to read"],[59.45,"Easy to keep"],[60.93,"Then I met the complicated version of you"],[63.87,"And now simple sounds like"],[65.89,"Something I'd be bored by"],[67.01,"Stay strange"],[69.05,"Don't sand the edges down for me"],[73.61,"Stay strange"],[75.47,"I fell for the parts that don't make sense"],[79.76,"Your weird little fears"],[81.48,"Your contradictions"],[83.08,"The way you contain"],[84.74,"Things that shouldn't fit together"],[88.4,"But somehow do"],[91.63,"Please don't become"],[94.1,"Easier to love"],[98.13,"Please don't become"],[100.54,"Easier to love"],[105.84,"You cry at adverts"],[107.24,"But not at funerals"],[108.72,"You said you process things"],[110.46,"On a delay"],[111.58,"Like grief arrives"],[112.86,"Two weeks after"],[114.7,"In the middle of something unrelated"],[117.58,"You're terrified of being too much"],[119.56,"So sometimes you make yourself"],[121.19,"Less"],[122.65,"And I can always tell"],[124.22,"There's a version of you"],[125.62,"Hovering just outside the sentence"],[128.19,"Waiting to see if it's safe"],[130.18,"It's safe"],[131.05,"It's safe"],[132.06,"I don't want the version"],[133.86,"You rehearsed in the mirror"],[135.14,"I don't want the one"],[136.71,"That already knows how this goes"],[138.06,"I want the one"],[139.92,"That's figuring it out"],[141.38,"Out loud"],[141.83,"In front of me"],[143.08,"Stay strange"],[144.71,"Don't sand the edges down for me"],[149.04,"Stay strange"],[151.03,"I fell for the parts that don't make sense"],[155.51,"Your weird little fears"],[157.17,"Your contradictions"],[158.76,"The way you contain"],[160.35,"Things that shouldn't fit together"],[163.61,"But somehow do"],[167.57,"Please don't become"],[168.93,"Easier to love"],[173.79,"Please don't become"],[176.23,"Easier to love"],[182.43,"I think we've both spent a long time"],[185.97,"Trying to be the version"],[186.99,"Someone could handle"],[189.01,"And there's something almost funny about that"],[190.82,"Two people"],[192.12,"Making themselves smaller"],[195.43,"So the other one"],[196.41,"Wouldn't leave"],[198.5,"What if we just"],[199.27,"Didn't do that"],[200.56,"What if we just"],[201.75,"Showed up wrong"],[203.22,"And stayed anyway"],[206.18,"Stay strange"],[207.72,"I'm not here to fix the edges"],[212.13,"Stay strange"],[214.15,"I'm learning the language of you"],[218.55,"Your awkward silences"],[220.01,"Your over-explanations"],[223.05,"The way you love"],[224.59,"Like you're still deciding"],[226.94,"If you're allowed to"],[230.06,"You're allowed to"],[233.26,"You're allowed to"],[235.69,"Please don't become"],[238.73,"Easier to love"],[241.87,"I don't want easier"],[246.77,"I want you"]];
-      const normalize=s=>s.toLowerCase().replace(/[’‘]/g,"'").replace(/[^a-z0-9]+/g,' ').trim();
-      let searchFrom=0;
-      const mapped=sourceCues.map(([time,text])=>{
-        const target=normalize(text);
-        const index=lines.findIndex((line,i)=>i>=searchFrom&&normalize(line.textContent)===target);
-        if(index>=0)searchFrom=index+1;
-        return {time,index,text};
-      });
-      const missing=mapped.filter(c=>c.index<0);
-      if(missing.length)console.warn('Unmatched Stay Strange lyric cues:',missing.map(c=>c.text));
-      let active=-1,lastScroll=0;
-      function clear(){lines.forEach(l=>l.classList.remove('ds-active-line','ds-near-line'))}
-      function update(){
-        if(!highlight.checked){section.classList.add('ds-sync-off');clear();active=-1;return}
-        section.classList.remove('ds-sync-off');
-        const t=audio.currentTime;
-        let next=-1;
-        for(let i=0;i<mapped.length;i++){if(mapped[i].time<=t)next=i;else break}
-        if(t>=262.05)next=-1;
-        const lineIndex=next<0?-1:mapped[next].index;
-        if(next===active)return;
-        active=next;clear();
-        if(lineIndex<0)return;
-        lines[lineIndex].classList.add('ds-active-line');
-        if(lines[lineIndex-1])lines[lineIndex-1].classList.add('ds-near-line');
-        if(lines[lineIndex+1])lines[lineIndex+1].classList.add('ds-near-line');
-        if(autoscroll.checked&&!audio.paused){
-          const now=Date.now();
-          if(now-lastScroll>900){
+      for(const id of ['strange','insomnia']){
+        const section=document.getElementById(id),audio=document.getElementById('ds-'+id+'-audio');
+        const highlight=document.getElementById('ds-'+id+'-sync'),autoscroll=document.getElementById('ds-'+id+'-scroll');
+        if(!section||!audio||!highlight||!autoscroll)continue;
+        const lines=Array.from(section.querySelectorAll('.lyrics-text .lyric-line'));
+        const endTime=id==='strange'?262.05:279.94;
+        let active=-2,lastScroll=0;
+        const clear=()=>lines.forEach(l=>l.classList.remove('ds-active-line','ds-near-line'));
+        function update(){
+          if(!highlight.checked){section.classList.add('ds-sync-off');clear();active=-2;return}
+          section.classList.remove('ds-sync-off');
+          let next=-1;
+          if(audio.currentTime<endTime)for(let i=0;i<lines.length;i++){if(Number(lines[i].dataset.time)<=audio.currentTime)next=i;else break}
+          if(next===active)return;
+          active=next;clear();
+          if(next<0)return;
+          lines[next].classList.add('ds-active-line');
+          if(lines[next-1])lines[next-1].classList.add('ds-near-line');
+          if(lines[next+1])lines[next+1].classList.add('ds-near-line');
+          if(autoscroll.checked&&!audio.paused&&Date.now()-lastScroll>900){
             const player=section.querySelector('.ds-custom-player');
             const offset=window.innerWidth<=768?(player?.getBoundingClientRect().height||180)+110:150;
-            const y=window.scrollY+lines[lineIndex].getBoundingClientRect().top-offset;
-            window.scrollTo({top:Math.max(0,y),behavior:'smooth'});
-            lastScroll=now;
+            window.scrollTo({top:Math.max(0,window.scrollY+lines[next].getBoundingClientRect().top-offset),behavior:'smooth'});
+            lastScroll=Date.now();
           }
         }
+        audio.addEventListener('timeupdate',update);
+        audio.addEventListener('seeked',()=>{active=-2;update()});
+        audio.addEventListener('play',()=>{active=-2;update()});
+        audio.addEventListener('ended',()=>{active=-2;clear()});
+        highlight.addEventListener('change',()=>{active=-2;update()});
+        autoscroll.addEventListener('change',()=>{active=-2;update()});
       }
-      status.textContent='Musixmatch timestamps loaded. Some early verse lines have no supplied timing.';
-      audio.addEventListener('timeupdate',update);
-      audio.addEventListener('seeked',()=>{active=-1;update()});
-      audio.addEventListener('play',()=>{active=-1;update()});
-      audio.addEventListener('ended',()=>{active=-1;clear()});
-      highlight.addEventListener('change',()=>{active=-1;update()});
-      autoscroll.addEventListener('change',()=>{active=-1;update()});
-      section.classList.toggle('ds-sync-off',!highlight.checked);
     })();
     function scrollToSong(id) {
       const el = document.getElementById(id);
