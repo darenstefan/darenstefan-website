@@ -14,3 +14,6 @@
 
 /* Minimal identity: wordmark remains until the approved social-logo master asset is available. */
 .ds-site-header .ds-brand{letter-spacing:.21em!important;font-weight:700!important}.ds-site-header .ds-brand span{display:none!important}.ds-site-header .ds-links a{color:#bcbcbc!important}.ds-site-header .ds-links a:hover{color:#fff!important}
+
+/* Official Darenstefan symbol, vector-traced from supplied approved mark */
+.ds-site-header .ds-brand:before{content:"";width:34px;height:24px;display:inline-block;flex-shrink:0;background:url("darenstefan-symbol.svg") center/contain no-repeat;margin-right:10px}
