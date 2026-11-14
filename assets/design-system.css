@@ -1,7 +1,9 @@
+/* Darenstefan V2 typography: Satoshi display + General Sans reading; Fontshare */
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@500,700,900&f[]=general-sans@400,500,600,700&display=swap');
 /* DARENSTEFAN shared design system — cinematic redesign */
-:root{--black:#080808!important;--surface:#141414!important;--overlay:#202020!important;--border:rgba(217,213,204,.17)!important;--gold:#ffffff!important;--gold-dim:rgba(217,213,204,.4)!important;--parchment:#f5f5f5!important;--muted:#b5b5b5!important;--dim:rgba(166,173,184,.6)!important;--display:'Manrope',sans-serif!important;--body:'DM Sans',sans-serif!important}
-html{scroll-padding-top:95px}body{background:#080808!important;color:#f5f5f5!important;font-family:'DM Sans',sans-serif!important}
-h1,h2,h3,h4,.hero-title,.section-title,.nav-logo,.footer-logo{font-family:'Manrope',sans-serif!important;letter-spacing:-.035em}
+:root{--black:#080808!important;--surface:#141414!important;--overlay:#202020!important;--border:rgba(217,213,204,.17)!important;--gold:#ffffff!important;--gold-dim:rgba(217,213,204,.4)!important;--parchment:#f5f5f5!important;--muted:#b5b5b5!important;--dim:rgba(166,173,184,.6)!important;--display:'Satoshi','Manrope',sans-serif!important;--body:'General Sans','DM Sans',sans-serif!important}
+html{scroll-padding-top:95px}body{background:#080808!important;color:#f5f5f5!important;font-family:'General Sans','DM Sans',sans-serif!important}
+h1,h2,h3,h4,.hero-title,.section-title,.nav-logo,.footer-logo{font-family:'Satoshi','Manrope',sans-serif!important;letter-spacing:-.035em}
 nav#nav{background:rgba(17,21,29,.96)!important;backdrop-filter:blur(18px);border-bottom:1px solid rgba(217,213,204,.15);padding:18px max(22px,calc((100vw - 1220px)/2))!important;min-height:78px}
 nav .nav-logo{font-size:15px!important;font-weight:800!important;letter-spacing:.17em!important;color:#f5f5f5!important;white-space:nowrap}
 nav .nav-links{gap:22px!important}nav .nav-links a{font-size:11px!important;letter-spacing:.11em!important;color:#b5b5b5!important}nav .nav-links a.active,nav .nav-links a:hover{color:#fff!important}
@@ -21,3 +23,7 @@ footer .footer-copy{color:#b5b5b5!important}
 @media(max-width:900px){nav#nav{padding:18px 22px!important}nav .nav-links{background:#141414!important;border:1px solid rgba(217,213,204,.15)}}
 @media(max-width:600px){nav#nav{min-height:70px}h1{overflow-wrap:break-word}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* V2 editorial type scale */
+body,button,input,textarea,select{font-family:'General Sans','DM Sans',system-ui,sans-serif!important}
+h1,h2,h3,h4,.hero-title,.section-title,.nav-logo,.footer-logo{font-family:'Satoshi','Manrope',system-ui,sans-serif!important}
