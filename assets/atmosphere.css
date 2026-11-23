@@ -1,0 +1,32 @@
+/* Darenstefan continuous atmospheric identity — preview */
+html{background:#080808!important}
+body{background:transparent!important;color:#f4f4f4!important;isolation:isolate}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:#080808 url("signature-waves.svg") center center/cover no-repeat;opacity:1}
+body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,rgba(5,5,5,.48),rgba(5,5,5,.09) 65%,rgba(5,5,5,.23));}
+.ds-site-header{background:rgba(8,8,8,.55)!important;border:0!important;backdrop-filter:blur(15px);-webkit-backdrop-filter:blur(15px)}
+.ds-site-header .ds-site-nav{border:0!important}
+section,main,footer,.hero,.section,.site-footer,.ds-discover,.ds-discovery-hero{background-color:transparent!important;background-image:none!important;border-top:0!important;border-bottom:0!important;box-shadow:none!important}
+section::before,section::after{border:0!important}
+hr,.divider,.section-divider{display:none!important}
+.ds-featured,.tile,.card,.release-card,.song,.music-card{background:rgba(17,17,17,.76)!important;backdrop-filter:blur(13px);-webkit-backdrop-filter:blur(13px);border-color:rgba(255,255,255,.075)!important}
+a:focus-visible,button:focus-visible{outline:2px solid white;outline-offset:4px}
+@media(max-width:700px){body::before{background-position:57% center}body::after{background:rgba(0,0,0,.38)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important}}
+
+/* Responsive foundations: prevent sideways scrolling and preserve comfortable tap targets */
+html{overflow-x:clip;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{min-width:0;overflow-x:clip}
+img,svg,video,iframe{max-width:100%}
+img{height:auto}
+audio{max-width:100%;min-width:0}
+.shell,.container,main,section{min-width:0}
+.ds-site-header .ds-brand{min-width:0}
+.ds-site-header .ds-menu{min-height:44px!important;min-width:55px!important}
+.ds-site-header .ds-links a{min-height:44px!important;display:flex!important;align-items:center!important}
+@media(min-width:1051px){.ds-site-header .ds-links a{display:inline-flex!important}}
+@media(max-width:1050px){.ds-site-header .ds-links{max-height:calc(100dvh - 72px)!important;overflow-y:auto!important;overscroll-behavior:contain!important}.ds-site-header .ds-links:not(.open){display:none!important}}
+@media(max-width:420px){.ds-site-header .ds-brand{font-size:clamp(10px,3vw,13px)!important;letter-spacing:.09em!important}.ds-site-header .ds-brand:before{width:26px!important;margin-right:7px!important}.ds-site-header .ds-site-nav{gap:8px!important}}
+/* Keep the signature atmosphere fixed, but render it economically on handheld devices */
+@media(max-width:700px){body::before{background-position:56% center;background-size:auto 100%;}body::after{background:rgba(0,0,0,.38)}.ds-featured,.tile,.card,.release-card,.song,.music-card{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}}
+@media(prefers-reduced-transparency:reduce){.ds-site-header,.ds-featured,.tile,.card,.release-card,.song,.music-card{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;background:rgba(10,10,10,.94)!important}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
